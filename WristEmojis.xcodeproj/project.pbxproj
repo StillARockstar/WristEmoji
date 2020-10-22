@@ -10,7 +10,7 @@
 		4CA9CD952541E55000A83296 /* WristEmojis WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 4CA9CD942541E55000A83296 /* WristEmojis WatchKit App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		4CA9CD9A2541E55200A83296 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4CA9CD992541E55200A83296 /* Assets.xcassets */; };
 		4CA9CDA12541E55300A83296 /* WristEmojis WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 4CA9CDA02541E55300A83296 /* WristEmojis WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		4CA9CDA62541E55300A83296 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA9CDA52541E55300A83296 /* ContentView.swift */; };
+		4CA9CDA62541E55300A83296 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA9CDA52541E55300A83296 /* HomeView.swift */; };
 		4CA9CDA82541E55300A83296 /* WristEmojisApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA9CDA72541E55300A83296 /* WristEmojisApp.swift */; };
 		4CA9CDAA2541E55300A83296 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA9CDA92541E55300A83296 /* ComplicationController.swift */; };
 		4CA9CDAC2541E55400A83296 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4CA9CDAB2541E55400A83296 /* Assets.xcassets */; };
@@ -65,7 +65,7 @@
 		4CA9CD992541E55200A83296 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4CA9CD9B2541E55200A83296 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4CA9CDA02541E55300A83296 /* WristEmojis WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "WristEmojis WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
-		4CA9CDA52541E55300A83296 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		4CA9CDA52541E55300A83296 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		4CA9CDA72541E55300A83296 /* WristEmojisApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WristEmojisApp.swift; sourceTree = "<group>"; };
 		4CA9CDA92541E55300A83296 /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
 		4CA9CDAB2541E55400A83296 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -115,7 +115,7 @@
 		4CA9CDA42541E55300A83296 /* WristEmojis WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
-				4CA9CDA52541E55300A83296 /* ContentView.swift */,
+				4CA9CDA52541E55300A83296 /* HomeView.swift */,
 				4CA9CDA72541E55300A83296 /* WristEmojisApp.swift */,
 				4CA9CDA92541E55300A83296 /* ComplicationController.swift */,
 				4CA9CDAB2541E55400A83296 /* Assets.xcassets */,
@@ -260,7 +260,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4CA9CDA82541E55300A83296 /* WristEmojisApp.swift in Sources */,
-				4CA9CDA62541E55300A83296 /* ContentView.swift in Sources */,
+				4CA9CDA62541E55300A83296 /* HomeView.swift in Sources */,
 				4CA9CDAA2541E55300A83296 /* ComplicationController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
