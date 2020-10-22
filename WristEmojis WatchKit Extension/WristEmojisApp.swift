@@ -13,6 +13,7 @@ struct WristEmojisApp: App {
         WindowGroup {
             NavigationView {
                 HomeView()
+                    .environmentObject(HomeViewProvider())
             }
         }
     }

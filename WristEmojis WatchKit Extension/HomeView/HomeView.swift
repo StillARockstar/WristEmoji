@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct HomeView: View {
-    let data = ["🚀", "🦁", "🙈", "😉", "🐼", "💅", "😂", "🐹", "🐶", "🙂", "🐻", "🐨", "🦊", "😜"]
+    @EnvironmentObject var provider: HomeViewProvider
 
     let columns = [
         GridItem(.flexible()),
@@ -19,18 +19,18 @@ struct HomeView: View {
     var body: some View {
         ScrollView {
             LazyVGrid(columns: columns) {
-                ForEach(data, id: \.self) { item in
+                ForEach(provider.entries, id: \.id) { item in
                     Button(action: {
-                        print("hi")
+                        print(item.name)
                     }, label: {
-                        Text(item)
+                        Text(item.emoji)
                             .font(.title)
                     })
                     .aspectRatio(contentMode: .fill)
                 }
             }
             Button("New Emoji") {
-                print("hi")
+                print("New Emoji")
             }
         }
     }
@@ -39,5 +39,6 @@ struct HomeView: View {
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         HomeView()
+            .environmentObject(HomeViewProvider())
     }
 }
