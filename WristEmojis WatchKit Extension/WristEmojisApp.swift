@@ -12,7 +12,8 @@ struct WristEmojisApp: App {
     var body: some Scene {
         WindowGroup {
             NavigationView {
-                ContentView()
+                HomeView()
+                    .environmentObject(HomeViewProvider())
             }
         }
     }
