@@ -8,9 +8,31 @@
 import SwiftUI
 
 struct HomeView: View {
+    let data = ["🚀", "🦁", "🙈", "😉", "🐼", "💅", "😂", "🐹", "🐶", "🙂", "🐻", "🐨", "🦊", "😜"]
+
+    let columns = [
+        GridItem(.flexible()),
+        GridItem(.flexible()),
+        GridItem(.flexible())
+    ]
+
     var body: some View {
-        Text("Hello, World!")
-            .padding()
+        ScrollView {
+            LazyVGrid(columns: columns) {
+                ForEach(data, id: \.self) { item in
+                    Button(action: {
+                        print("hi")
+                    }, label: {
+                        Text(item)
+                            .font(.title)
+                    })
+                    .aspectRatio(contentMode: .fill)
+                }
+            }
+            Button("New Emoji") {
+                print("hi")
+            }
+        }
     }
 }
 
