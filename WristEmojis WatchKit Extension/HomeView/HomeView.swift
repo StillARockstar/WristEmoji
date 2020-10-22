@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct HomeView: View {
+    @State var showingDetail = false
     @EnvironmentObject var provider: HomeViewProvider
 
     let columns = [
@@ -29,9 +30,10 @@ struct HomeView: View {
                     .aspectRatio(contentMode: .fill)
                 }
             }
-            Button("New Emoji") {
-                print("New Emoji")
-            }
+            Button("New Emoji", action: { showingDetail.toggle() })
+                .sheet(isPresented: $showingDetail, content: {
+                    DetailView()
+                })
         }
     }
 }
