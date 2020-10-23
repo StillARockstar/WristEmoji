@@ -8,21 +8,29 @@
 import SwiftUI
 
 struct DetailView: View {
-    @State var title: String = ""
+    @EnvironmentObject var provider: DetailViewProvider
 
     var body: some View {
         VStack() {
             Button(action: {
 
             }, label: {
-                Text("🦁")
+                Text(provider.emoji)
                     .font(.largeTitle)
             })
                 .aspectRatio(1.0, contentMode: .fit)
-            TextField("Name", text: $title)
+            TextField("Name", text: $provider.name)
             Spacer()
-            Button("Save") {
-                print("Save")
+            HStack {
+                Button("Save") {
+                    print("Save")
+                }
+                if provider.deleteable {
+                    Button("Delete") {
+                        print("Delete")
+                    }
+                        .foregroundColor(.red)
+                }
             }
         }
     }
@@ -31,5 +39,14 @@ struct DetailView: View {
 struct DetailView_Previews: PreviewProvider {
     static var previews: some View {
         DetailView()
+            .environmentObject(DetailViewProvider(
+                                configuration: EmojiConfiguration(id: "", emoji: "🚀", name: "Rocket"),
+                                deleteable: true)
+            )
+        DetailView()
+            .environmentObject(DetailViewProvider(
+                                configuration: EmojiConfiguration(id: "", emoji: "🚀", name: "Rocket"),
+                                deleteable: false)
+            )
     }
 }

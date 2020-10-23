@@ -17,6 +17,7 @@
 		4CA9CDAF2541E55400A83296 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4CA9CDAE2541E55400A83296 /* Preview Assets.xcassets */; };
 		4CA9CDCF2541EB0500A83296 /* HomeViewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA9CDCE2541EB0500A83296 /* HomeViewProvider.swift */; };
 		4CA9CDDE2541F1B700A83296 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA9CDDD2541F1B700A83296 /* DetailView.swift */; };
+		4CA9CDE32541F49400A83296 /* DetailViewPovider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA9CDE22541F49400A83296 /* DetailViewPovider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +76,7 @@
 		4CA9CDB02541E55400A83296 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4CA9CDCE2541EB0500A83296 /* HomeViewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewProvider.swift; sourceTree = "<group>"; };
 		4CA9CDDD2541F1B700A83296 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		4CA9CDE22541F49400A83296 /* DetailViewPovider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewPovider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +152,7 @@
 		4CA9CDDC2541F19D00A83296 /* DetailView */ = {
 			isa = PBXGroup;
 			children = (
+				4CA9CDE22541F49400A83296 /* DetailViewPovider.swift */,
 				4CA9CDDD2541F1B700A83296 /* DetailView.swift */,
 			);
 			path = DetailView;
@@ -282,6 +285,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4CA9CDCF2541EB0500A83296 /* HomeViewProvider.swift in Sources */,
+				4CA9CDE32541F49400A83296 /* DetailViewPovider.swift in Sources */,
 				4CA9CDA82541E55300A83296 /* WristEmojisApp.swift in Sources */,
 				4CA9CDA62541E55300A83296 /* HomeView.swift in Sources */,
 				4CA9CDDE2541F1B700A83296 /* DetailView.swift in Sources */,
