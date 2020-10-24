@@ -9,13 +9,13 @@ import SwiftUI
 
 struct HomeView: View {
     @EnvironmentObject var provider: HomeViewProvider
-
+    
     let columns = [
         GridItem(.flexible()),
         GridItem(.flexible()),
         GridItem(.flexible())
     ]
-
+    
     var body: some View {
         ScrollView {
             LazyVGrid(columns: columns) {
@@ -23,19 +23,19 @@ struct HomeView: View {
                     NavigationLink(
                         destination:
                             DetailView()
-                                .environmentObject(DetailViewProvider(configuration: item, deleteable: true)),
+                            .environmentObject(DetailViewProvider(configuration: item, deleteable: true)),
                         label: {
                             Text(item.emoji)
                                 .font(.title)
                         }
                     )
-                        .aspectRatio(contentMode: .fill)
+                    .aspectRatio(contentMode: .fill)
                 }
             }
             NavigationLink(
                 destination:
                     DetailView()
-                        .environmentObject(DetailViewProvider(configuration: nil, deleteable: false)),
+                    .environmentObject(DetailViewProvider(configuration: nil, deleteable: false)),
                 label: {
                     Text("New Emoji")
                 }

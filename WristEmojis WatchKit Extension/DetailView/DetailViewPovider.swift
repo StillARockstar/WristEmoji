@@ -27,4 +27,12 @@ class DetailViewProvider: ObservableObject {
             self.name = ""
         }
     }
+
+    func save() {
+        print("Save is not implemented yet")
+    }
+
+    func delete() {
+        print("delete is not implemented yet")
+    }
 }
