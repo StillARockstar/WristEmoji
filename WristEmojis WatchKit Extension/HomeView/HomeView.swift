@@ -9,29 +9,37 @@ import SwiftUI
 
 struct HomeView: View {
     @EnvironmentObject var provider: HomeViewProvider
-
+    
     let columns = [
         GridItem(.flexible()),
         GridItem(.flexible()),
         GridItem(.flexible())
     ]
-
+    
     var body: some View {
         ScrollView {
             LazyVGrid(columns: columns) {
                 ForEach(provider.entries, id: \.id) { item in
-                    Button(action: {
-                        print(item.name)
-                    }, label: {
-                        Text(item.emoji)
-                            .font(.title)
-                    })
+                    NavigationLink(
+                        destination:
+                            DetailView()
+                            .environmentObject(DetailViewProvider(configuration: item, deleteable: true)),
+                        label: {
+                            Text(item.emoji)
+                                .font(.title)
+                        }
+                    )
                     .aspectRatio(contentMode: .fill)
                 }
             }
-            Button("New Emoji") {
-                print("New Emoji")
-            }
+            NavigationLink(
+                destination:
+                    DetailView()
+                    .environmentObject(DetailViewProvider(configuration: nil, deleteable: false)),
+                label: {
+                    Text("New Emoji")
+                }
+            )
         }
     }
 }

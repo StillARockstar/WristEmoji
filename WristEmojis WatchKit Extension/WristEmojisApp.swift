@@ -11,10 +11,9 @@ import SwiftUI
 struct WristEmojisApp: App {
     var body: some Scene {
         WindowGroup {
-            NavigationView {
-                HomeView()
-                    .environmentObject(HomeViewProvider())
-            }
+            HomeView()
+                .environmentObject(HomeViewProvider())
+                .embedInNavigation()
         }
     }
 }
