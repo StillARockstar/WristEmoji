@@ -18,6 +18,7 @@
 		4CA9CDCF2541EB0500A83296 /* HomeViewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA9CDCE2541EB0500A83296 /* HomeViewProvider.swift */; };
 		4CA9CDDE2541F1B700A83296 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA9CDDD2541F1B700A83296 /* DetailView.swift */; };
 		4CA9CDE32541F49400A83296 /* DetailViewPovider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA9CDE22541F49400A83296 /* DetailViewPovider.swift */; };
+		4CA9CDEB2544519100A83296 /* View+Embed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA9CDEA2544519100A83296 /* View+Embed.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +78,7 @@
 		4CA9CDCE2541EB0500A83296 /* HomeViewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewProvider.swift; sourceTree = "<group>"; };
 		4CA9CDDD2541F1B700A83296 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		4CA9CDE22541F49400A83296 /* DetailViewPovider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewPovider.swift; sourceTree = "<group>"; };
+		4CA9CDEA2544519100A83296 /* View+Embed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Embed.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +123,7 @@
 		4CA9CDA42541E55300A83296 /* WristEmojis WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
+				4CA9CDEA2544519100A83296 /* View+Embed.swift */,
 				4CA9CDDC2541F19D00A83296 /* DetailView */,
 				4CA9CDCD2541EAF300A83296 /* HomeView */,
 				4CA9CDA72541E55300A83296 /* WristEmojisApp.swift */,
@@ -290,6 +293,7 @@
 				4CA9CDA62541E55300A83296 /* HomeView.swift in Sources */,
 				4CA9CDDE2541F1B700A83296 /* DetailView.swift in Sources */,
 				4CA9CDAA2541E55300A83296 /* ComplicationController.swift in Sources */,
+				4CA9CDEB2544519100A83296 /* View+Embed.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

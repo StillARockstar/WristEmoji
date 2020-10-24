@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct HomeView: View {
-    @State var showingDetail = false
     @EnvironmentObject var provider: HomeViewProvider
 
     let columns = [
@@ -21,19 +20,26 @@ struct HomeView: View {
         ScrollView {
             LazyVGrid(columns: columns) {
                 ForEach(provider.entries, id: \.id) { item in
-                    Button(action: {
-                        print(item.name)
-                    }, label: {
-                        Text(item.emoji)
-                            .font(.title)
-                    })
-                    .aspectRatio(contentMode: .fill)
+                    NavigationLink(
+                        destination:
+                            DetailView()
+                                .environmentObject(DetailViewProvider(configuration: item, deleteable: true)),
+                        label: {
+                            Text(item.emoji)
+                                .font(.title)
+                        }
+                    )
+                        .aspectRatio(contentMode: .fill)
                 }
             }
-            Button("New Emoji", action: { showingDetail.toggle() })
-                .sheet(isPresented: $showingDetail, content: {
+            NavigationLink(
+                destination:
                     DetailView()
-                })
+                        .environmentObject(DetailViewProvider(configuration: nil, deleteable: false)),
+                label: {
+                    Text("New Emoji")
+                }
+            )
         }
     }
 }
