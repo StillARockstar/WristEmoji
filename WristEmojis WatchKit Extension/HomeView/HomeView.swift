@@ -23,7 +23,13 @@ struct HomeView: View {
                     NavigationLink(
                         destination:
                             DetailView()
-                            .environmentObject(DetailViewProvider(configuration: item, deleteable: true)),
+                            .environmentObject(
+                                DetailViewProvider(
+                                    dataProvider: provider.dataProvider,
+                                    configuration: item,
+                                    deleteable: true
+                                )
+                            ),
                         label: {
                             Text(item.emoji)
                                 .font(.title)
@@ -35,7 +41,13 @@ struct HomeView: View {
             NavigationLink(
                 destination:
                     DetailView()
-                    .environmentObject(DetailViewProvider(configuration: nil, deleteable: false)),
+                    .environmentObject(
+                        DetailViewProvider(
+                            dataProvider: provider.dataProvider,
+                            configuration: nil,
+                            deleteable: false
+                        )
+                    ),
                 label: {
                     Text("New Emoji")
                 }
@@ -47,6 +59,6 @@ struct HomeView: View {
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         HomeView()
-            .environmentObject(HomeViewProvider())
+            .environmentObject(HomeViewProvider(dataProvider: PreviewDataProvider()))
     }
 }

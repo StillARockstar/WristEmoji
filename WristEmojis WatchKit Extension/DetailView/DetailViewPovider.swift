@@ -12,10 +12,12 @@ class DetailViewProvider: ObservableObject {
     @Published var emoji: String
     @Published var name: String
 
+    let dataProvider: DataProvider
     let configuration: EmojiConfiguration?
     let deleteable: Bool
 
-    init(configuration: EmojiConfiguration?, deleteable: Bool) {
+    init(dataProvider: DataProvider, configuration: EmojiConfiguration?, deleteable: Bool) {
+        self.dataProvider = dataProvider
         self.configuration = configuration
         self.deleteable = deleteable
 
@@ -29,10 +31,14 @@ class DetailViewProvider: ObservableObject {
     }
 
     func save() {
-        print("Save is not implemented yet")
+        let uuid = self.configuration?.id ?? UUID().uuidString
+        self.dataProvider.userData.addOrUpdate(
+            configuration: EmojiConfiguration(id: uuid, emoji: emoji, name: name)
+        )
     }
 
     func delete() {
-        print("delete is not implemented yet")
+        let uuid = self.configuration?.id ?? UUID().uuidString
+        self.dataProvider.userData.delete(uuid: uuid)
     }
 }
