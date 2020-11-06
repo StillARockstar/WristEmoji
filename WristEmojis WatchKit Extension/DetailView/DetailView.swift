@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct DetailView: View {
+    @State private var showingEmojiPicker = false
     @State private var showingDeleteAlert = false
     @Environment(\.presentationMode) var presentationMode
     @EnvironmentObject var provider: DetailViewProvider
@@ -15,10 +16,13 @@ struct DetailView: View {
     var body: some View {
         VStack() {
             Button(action: {
-
+                showingEmojiPicker = true
             }, label: {
                 Text(provider.emoji)
                     .font(.largeTitle)
+            })
+            .sheet(isPresented: $showingEmojiPicker, content: {
+                EmojiPicker()
             })
             .aspectRatio(1.0, contentMode: .fit)
             TextField("Name", text: $provider.name)
