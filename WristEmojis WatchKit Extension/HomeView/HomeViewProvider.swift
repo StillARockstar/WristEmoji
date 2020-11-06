@@ -8,21 +8,23 @@
 import Foundation
 import Combine
 
-struct EmojiConfiguration {
+struct EmojiConfiguration: Codable {
     let id: String
     let emoji: String
     let name: String
 }
 
 class HomeViewProvider: ObservableObject {
-    @Published var entries: [EmojiConfiguration]
+    let dataProvider: DataProvider
+    private var subscriptions: Set<AnyCancellable> = Set()
 
-    init() {
-        self.entries = [
-            EmojiConfiguration(id: UUID().uuidString, emoji: "🚀", name: "Rocket"),
-            EmojiConfiguration(id: UUID().uuidString, emoji: "🦁", name: "Rawwwr"),
-            EmojiConfiguration(id: UUID().uuidString, emoji: "🐶", name: "Doggo"),
-            EmojiConfiguration(id: UUID().uuidString, emoji: "🥳", name: "Party")
-        ]
+    @Published var entries: [EmojiConfiguration] = []
+
+    init(dataProvider: DataProvider) {
+        self.dataProvider = dataProvider
+        dataProvider.userData.configurationsPublisher
+            .receive(on: DispatchQueue.main)
+            .assign(to: \.entries, on: self)
+            .store(in: &subscriptions)
     }
 }

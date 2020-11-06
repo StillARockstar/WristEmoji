@@ -58,6 +58,7 @@ struct DetailView_Previews: PreviewProvider {
         DetailView()
             .environmentObject(
                 DetailViewProvider(
+                    dataProvider: PreviewDataProvider(),
                     configuration: EmojiConfiguration(id: "", emoji: "🚀", name: "Rocket"),
                     deleteable: true
                 )
@@ -65,6 +66,7 @@ struct DetailView_Previews: PreviewProvider {
         DetailView()
             .environmentObject(
                 DetailViewProvider(
+                    dataProvider: PreviewDataProvider(),
                     configuration: EmojiConfiguration(id: "", emoji: "🚀", name: "Rocket"),
                     deleteable: false
                 )
