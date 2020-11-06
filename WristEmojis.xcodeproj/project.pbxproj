@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4C0B95FA2547577E00815268 /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0B95F92547577E00815268 /* DataProvider.swift */; };
+		4C0B960225475D0600815268 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0B960125475D0600815268 /* DataStore.swift */; };
 		4CA9CD952541E55000A83296 /* WristEmojis WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 4CA9CD942541E55000A83296 /* WristEmojis WatchKit App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		4CA9CD9A2541E55200A83296 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4CA9CD992541E55200A83296 /* Assets.xcassets */; };
 		4CA9CDA12541E55300A83296 /* WristEmojis WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 4CA9CDA02541E55300A83296 /* WristEmojis WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -66,6 +67,7 @@
 
 /* Begin PBXFileReference section */
 		4C0B95F92547577E00815268 /* DataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
+		4C0B960125475D0600815268 /* DataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
 		4CA9CD902541E55000A83296 /* WristEmojis.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WristEmojis.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CA9CD942541E55000A83296 /* WristEmojis WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WristEmojis WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CA9CD992541E55200A83296 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				4C0B95F92547577E00815268 /* DataProvider.swift */,
+				4C0B960125475D0600815268 /* DataStore.swift */,
 			);
 			path = DataProvider;
 			sourceTree = "<group>";
@@ -305,6 +308,7 @@
 				4CA9CDA62541E55300A83296 /* HomeView.swift in Sources */,
 				4CA9CDDE2541F1B700A83296 /* DetailView.swift in Sources */,
 				4CA9CDAA2541E55300A83296 /* ComplicationController.swift in Sources */,
+				4C0B960225475D0600815268 /* DataStore.swift in Sources */,
 				4CA9CDEB2544519100A83296 /* View+Embed.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

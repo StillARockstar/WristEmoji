@@ -8,7 +8,7 @@
 import Foundation
 import Combine
 
-struct EmojiConfiguration {
+struct EmojiConfiguration: Codable {
     let id: String
     let emoji: String
     let name: String

@@ -36,19 +36,27 @@ class AppUserData: UserData {
     var configurationsPublisher: Published<[EmojiConfiguration]>.Publisher { $configurations }
 
     init() {
-        // TODO: Load persisted
+        self.configurations = DataStore.namespace(DataStoreConstants.namespace).get(key: DataStoreConstants.configurations) ?? []
     }
 
     func addOrUpdate(configuration: EmojiConfiguration) {
-        guard let configIndex = self.configurations.firstIndex(where: { $0.id == configuration.id }) else {
+        if let configIndex = self.configurations.firstIndex(where: { $0.id == configuration.id }) {
+            self.configurations[configIndex] = configuration
+            DataStore.namespace(DataStoreConstants.namespace).set(value: self.configurations, for: DataStoreConstants.configurations)
+        } else {
             self.configurations.append(configuration)
-            return
+            DataStore.namespace(DataStoreConstants.namespace).set(value: self.configurations, for: DataStoreConstants.configurations)
         }
-        self.configurations[configIndex] = configuration
     }
 
     func delete(uuid: String) {
         self.configurations.removeAll(where: { $0.id == uuid })
+        DataStore.namespace(DataStoreConstants.namespace).set(value: self.configurations, for: DataStoreConstants.configurations)
+    }
+
+    private struct DataStoreConstants {
+        static let namespace = "user_data"
+        static let configurations = "configs"
     }
 }
 
