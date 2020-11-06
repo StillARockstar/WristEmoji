@@ -22,7 +22,9 @@ struct DetailView: View {
                     .font(.largeTitle)
             })
             .sheet(isPresented: $showingEmojiPicker, content: {
-                EmojiPicker()
+                EmojiPicker { emoji in
+                    provider.emoji = emoji
+                }
             })
             .aspectRatio(1.0, contentMode: .fit)
             TextField("Name", text: $provider.name)
