@@ -9,7 +9,12 @@ import SwiftUI
 
 struct EmojiPicker: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        EmojiGroupPicker(
+            availableGroups: EmojisModel.availableGroups,
+            selectedItemCallback: { index in
+                print("Selected index: \(index)")
+            }
+        )
     }
 }
 
