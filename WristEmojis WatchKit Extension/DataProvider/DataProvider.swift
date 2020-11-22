@@ -40,7 +40,7 @@ class AppUserData: UserData {
     }
 
     func addOrUpdate(configuration: EmojiConfiguration) {
-        if let configIndex = self.configurations.firstIndex(where: { $0.id == configuration.id }) {
+        if let configIndex = self.configurations.firstIndex(where: { $0 == configuration }) {
             self.configurations[configIndex] = configuration
             DataStore.namespace(DataStoreConstants.namespace).set(value: self.configurations, for: DataStoreConstants.configurations)
         } else {

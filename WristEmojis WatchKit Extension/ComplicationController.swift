@@ -17,12 +17,15 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
         var descriptors = [CLKComplicationDescriptor]()
 
         for configuration in self.dataProvider.userData.configurations {
+            guard let payload = configuration.encode() else {
+                continue
+            }
             descriptors.append(
                 CLKComplicationDescriptor(
                     identifier: "\(configuration.id)_\(Date().timeIntervalSince1970)",
                     displayName: configuration.name,
                     supportedFamilies: [.modularSmall, .modularLarge, .utilitarianSmall, .utilitarianSmallFlat, .utilitarianLarge, .circularSmall, .extraLarge, .graphicCircular, .graphicCorner],
-                    userInfo: ["id": configuration.id]
+                    userInfo: ["payload": payload]
                 )
             )
         }
@@ -33,6 +36,15 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     
     func handleSharedComplicationDescriptors(_ complicationDescriptors: [CLKComplicationDescriptor]) {
         // Do any necessary work to support these newly shared complication descriptors
+        for descriptor in complicationDescriptors {
+            guard let payload = descriptor.userInfo?["payload"] as? Data,
+                  let configuration = EmojiConfiguration.from(data: payload) else {
+                continue
+            }
+            if !self.dataProvider.userData.configurations.contains(where: { $0 == configuration}) {
+                self.dataProvider.userData.addOrUpdate(configuration: configuration)
+            }
+        }
     }
 
     // MARK: Timeline Configuration
@@ -45,9 +57,9 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     // MARK: Timeline Population
     
     func getCurrentTimelineEntry(for complication: CLKComplication, withHandler handler: @escaping (CLKComplicationTimelineEntry?) -> Void) {
-        guard let id = complication.userInfo?["id"] as? String,
-              let emoji = self.dataProvider.userData.configurations.first(where: { $0.id == id })?.emoji,
-              let template = self.template(for: complication.family, emoji: emoji) else {
+        guard let payload = complication.userInfo?["payload"] as? Data,
+              let configuration = EmojiConfiguration.from(data: payload),
+              let template = self.template(for: complication.family, emoji: configuration.emoji) else {
             handler(nil)
             return
         }
@@ -57,12 +69,12 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     // MARK: Sample Templates
     
     func getLocalizableSampleTemplate(for complication: CLKComplication, withHandler handler: @escaping (CLKComplicationTemplate?) -> Void) {
-        guard let id = complication.userInfo?["id"] as? String,
-              let emoji = self.dataProvider.userData.configurations.first(where: { $0.id == id })?.emoji else {
+        guard let payload = complication.userInfo?["payload"] as? Data,
+              let configuration = EmojiConfiguration.from(data: payload) else {
             handler(nil)
             return
         }
-        handler(self.template(for: complication.family, emoji: emoji))
+        handler(self.template(for: complication.family, emoji: configuration.emoji))
     }
 
     // MARK: Helper Methods

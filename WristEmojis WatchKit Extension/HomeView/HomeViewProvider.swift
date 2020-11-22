@@ -8,10 +8,22 @@
 import Foundation
 import Combine
 
-struct EmojiConfiguration: Codable {
+struct EmojiConfiguration: Codable, Equatable {
     let id: String
     let emoji: String
     let name: String
+
+    func encode() -> Data? {
+        try? JSONEncoder().encode(self)
+    }
+
+    static func from(data: Data) -> Self? {
+        try? JSONDecoder().decode(Self.self, from: data)
+    }
+
+    static func == (lhs: Self, rhs: Self) -> Bool {
+        return lhs.id == rhs.id
+    }
 }
 
 class HomeViewProvider: ObservableObject {
