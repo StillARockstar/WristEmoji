@@ -36,4 +36,8 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
             CLKComplicationServer.sharedInstance().reloadComplicationDescriptors()
         }
     }
+
+    func applicationDidBecomeActive() {
+        self.dataProvider.userData.load()
+    }
 }

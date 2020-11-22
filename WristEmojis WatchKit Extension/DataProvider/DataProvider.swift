@@ -16,6 +16,7 @@ protocol UserData {
     var configurationsPublished: Published<[EmojiConfiguration]> { get }
     var configurationsPublisher: Published<[EmojiConfiguration]>.Publisher { get }
 
+    func load()
     func addOrUpdate(configuration: EmojiConfiguration)
     func delete(uuid: String)
 }
@@ -36,6 +37,11 @@ class AppUserData: UserData {
     var configurationsPublisher: Published<[EmojiConfiguration]>.Publisher { $configurations }
 
     init() {
+        self.configurations = []
+        self.load()
+    }
+
+    func load() {
         self.configurations = DataStore.namespace(DataStoreConstants.namespace).get(key: DataStoreConstants.configurations) ?? []
     }
 
@@ -85,11 +91,9 @@ class PreviewUserData: UserData {
 
     }
 
-    func addOrUpdate(configuration: EmojiConfiguration) {
+    func load() { }
 
-    }
+    func addOrUpdate(configuration: EmojiConfiguration) { }
 
-    func delete(uuid: String) {
-
-    }
+    func delete(uuid: String) { }
 }
