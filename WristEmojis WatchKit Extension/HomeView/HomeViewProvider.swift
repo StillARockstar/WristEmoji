@@ -13,12 +13,18 @@ struct EmojiConfiguration: Codable, Equatable {
     let emoji: String
     let name: String
 
-    func encode() -> Data? {
-        try? JSONEncoder().encode(self)
+    func encode() -> String? {
+        guard let jsonData = try? JSONEncoder().encode(self) else {
+            return nil
+        }
+        return String(data: jsonData, encoding: .utf8)
     }
 
-    static func from(data: Data) -> Self? {
-        try? JSONDecoder().decode(Self.self, from: data)
+    static func from(_ dataString: String) -> Self? {
+        guard let data = dataString.data(using: .utf8) else {
+            return nil
+        }
+        return try? JSONDecoder().decode(Self.self, from: data)
     }
 
     static func == (lhs: Self, rhs: Self) -> Bool {

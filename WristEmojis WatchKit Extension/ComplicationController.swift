@@ -37,8 +37,8 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     func handleSharedComplicationDescriptors(_ complicationDescriptors: [CLKComplicationDescriptor]) {
         // Do any necessary work to support these newly shared complication descriptors
         for descriptor in complicationDescriptors {
-            guard let payload = descriptor.userInfo?["payload"] as? Data,
-                  let configuration = EmojiConfiguration.from(data: payload) else {
+            guard let payload = descriptor.userInfo?["payload"] as? String,
+                  let configuration = EmojiConfiguration.from(payload) else {
                 continue
             }
             if !self.dataProvider.userData.configurations.contains(where: { $0 == configuration}) {
@@ -57,8 +57,8 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     // MARK: Timeline Population
     
     func getCurrentTimelineEntry(for complication: CLKComplication, withHandler handler: @escaping (CLKComplicationTimelineEntry?) -> Void) {
-        guard let payload = complication.userInfo?["payload"] as? Data,
-              let configuration = EmojiConfiguration.from(data: payload),
+        guard let payload = complication.userInfo?["payload"] as? String,
+              let configuration = EmojiConfiguration.from(payload),
               let template = self.template(for: complication.family, emoji: configuration.emoji) else {
             handler(nil)
             return
@@ -69,8 +69,8 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     // MARK: Sample Templates
     
     func getLocalizableSampleTemplate(for complication: CLKComplication, withHandler handler: @escaping (CLKComplicationTemplate?) -> Void) {
-        guard let payload = complication.userInfo?["payload"] as? Data,
-              let configuration = EmojiConfiguration.from(data: payload) else {
+        guard let payload = complication.userInfo?["payload"] as? String,
+              let configuration = EmojiConfiguration.from(payload) else {
             handler(nil)
             return
         }
