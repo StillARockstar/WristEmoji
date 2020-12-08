@@ -29,7 +29,7 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
     override init() {
         self.dataProvider = AppDataProvider()
 
-        self.configurationsPublisher = dataProvider.userData.configurationsPublisher.sink { newValue in
+        self.configurationsPublisher = dataProvider.userData.configurationsPublisher.dropFirst().sink { newValue in
             CLKComplicationServer.sharedInstance().activeComplications?.forEach {
                 CLKComplicationServer.sharedInstance().reloadTimeline(for: $0)
             }
