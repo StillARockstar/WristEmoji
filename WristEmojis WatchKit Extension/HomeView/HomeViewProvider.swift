@@ -8,9 +8,11 @@
 import Foundation
 import Combine
 
+typealias EmojiString = String
+
 struct EmojiConfiguration: Codable, Equatable {
     let id: String
-    let emoji: String
+    let emoji: EmojiString
     let name: String
 
     func encode() -> String? {
