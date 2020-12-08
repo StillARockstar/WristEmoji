@@ -22,7 +22,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
             }
             descriptors.append(
                 CLKComplicationDescriptor(
-                    identifier: "\(configuration.id)_\(Date().timeIntervalSince1970)",
+                    identifier: "\(configuration.id)_\(configuration.emoji.unicode)",
                     displayName: configuration.name,
                     supportedFamilies: [.modularSmall, .modularLarge, .utilitarianSmall, .utilitarianSmallFlat, .utilitarianLarge, .circularSmall, .extraLarge, .graphicCircular, .graphicCorner],
                     userInfo: ["payload": payload]

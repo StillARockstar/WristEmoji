@@ -9,6 +9,15 @@ import Foundation
 
 typealias EmojiString = String
 
+extension EmojiString {
+    var unicode: String {
+        guard let unicode = self.unicodeScalars.first?.value else {
+            return ""
+        }
+        return String(unicode)
+    }
+}
+
 struct EmojiConfiguration: Codable, Equatable {
     let id: String
     let emoji: EmojiString
