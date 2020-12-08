@@ -10,6 +10,7 @@
 		4C0B95FA2547577E00815268 /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0B95F92547577E00815268 /* DataProvider.swift */; };
 		4C0B960225475D0600815268 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0B960125475D0600815268 /* DataStore.swift */; };
 		4C3C9F0B2556E4CA0008F7E8 /* emojis_7_0.json in Resources */ = {isa = PBXBuildFile; fileRef = 4C3C9F0A2556E4CA0008F7E8 /* emojis_7_0.json */; };
+		4C6638B5257FD3E70028B398 /* EmojiConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6638B4257FD3E70028B398 /* EmojiConfiguration.swift */; };
 		4C724E12255816E700EE7994 /* emojis_7_1.json in Resources */ = {isa = PBXBuildFile; fileRef = 4C724E11255816E700EE7994 /* emojis_7_1.json */; };
 		4C7534062555B5D700F9FF92 /* EmojiPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7534052555B5D700F9FF92 /* EmojiPicker.swift */; };
 		4C7534132555B80700F9FF92 /* EmojisModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7534122555B80700F9FF92 /* EmojisModel.swift */; };
@@ -73,6 +74,7 @@
 		4C0B95F92547577E00815268 /* DataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
 		4C0B960125475D0600815268 /* DataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
 		4C3C9F0A2556E4CA0008F7E8 /* emojis_7_0.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = emojis_7_0.json; sourceTree = "<group>"; };
+		4C6638B4257FD3E70028B398 /* EmojiConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiConfiguration.swift; sourceTree = "<group>"; };
 		4C724E11255816E700EE7994 /* emojis_7_1.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = emojis_7_1.json; sourceTree = "<group>"; };
 		4C724E192558189700EE7994 /* EmojiCurator.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = EmojiCurator.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		4C7534052555B5D700F9FF92 /* EmojiPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiPicker.swift; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 			children = (
 				4C0B95F92547577E00815268 /* DataProvider.swift */,
 				4C0B960125475D0600815268 /* DataStore.swift */,
+				4C6638B4257FD3E70028B398 /* EmojiConfiguration.swift */,
 			);
 			path = DataProvider;
 			sourceTree = "<group>";
@@ -332,6 +335,7 @@
 				4CA9CDA82541E55300A83296 /* WristEmojisApp.swift in Sources */,
 				4CA9CDA62541E55300A83296 /* HomeView.swift in Sources */,
 				4CA9CDDE2541F1B700A83296 /* DetailView.swift in Sources */,
+				4C6638B5257FD3E70028B398 /* EmojiConfiguration.swift in Sources */,
 				4C7534132555B80700F9FF92 /* EmojisModel.swift in Sources */,
 				4CA9CDAA2541E55300A83296 /* ComplicationController.swift in Sources */,
 				4C0B960225475D0600815268 /* DataStore.swift in Sources */,
