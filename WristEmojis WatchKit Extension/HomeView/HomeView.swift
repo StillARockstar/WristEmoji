@@ -67,6 +67,7 @@ struct HomeView: View {
             switch item {
             case .info:
                 return InfoView()
+                    .environmentObject(InfoViewProvider(dataProvider: provider.dataProvider))
                     .asAnyView()
             }
         })
