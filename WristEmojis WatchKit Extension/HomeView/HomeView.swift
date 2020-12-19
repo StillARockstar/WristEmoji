@@ -7,7 +7,14 @@
 
 import SwiftUI
 
+enum HomeViewSheetItemType: Identifiable {
+    case info
+
+    var id: Int { hashValue }
+}
+
 struct HomeView: View {
+    @State var sheetItem: HomeViewSheetItemType?
     @EnvironmentObject var provider: HomeViewProvider
     
     let columns = [
@@ -53,6 +60,17 @@ struct HomeView: View {
                 }
             )
         }
+        .onLongPressGesture {
+            sheetItem = .info
+        }
+        .sheet(item: $sheetItem, content: { item -> AnyView in
+            switch item {
+            case .info:
+                return InfoView()
+                    .asAnyView()
+            }
+        })
+        .navigationBarTitle("WristEmojis")
     }
 }
 

@@ -25,7 +25,7 @@
 		4CA9CDCF2541EB0500A83296 /* HomeViewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA9CDCE2541EB0500A83296 /* HomeViewProvider.swift */; };
 		4CA9CDDE2541F1B700A83296 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA9CDDD2541F1B700A83296 /* DetailView.swift */; };
 		4CA9CDE32541F49400A83296 /* DetailViewPovider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA9CDE22541F49400A83296 /* DetailViewPovider.swift */; };
-		4CA9CDEB2544519100A83296 /* View+Embed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA9CDEA2544519100A83296 /* View+Embed.swift */; };
+		4CA9CDEB2544519100A83296 /* View+Convenients.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA9CDEA2544519100A83296 /* View+Convenients.swift */; };
 		4CE3E472258E6914006B1DBA /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE3E471258E6914006B1DBA /* InfoView.swift */; };
 /* End PBXBuildFile section */
 
@@ -94,7 +94,7 @@
 		4CA9CDCE2541EB0500A83296 /* HomeViewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewProvider.swift; sourceTree = "<group>"; };
 		4CA9CDDD2541F1B700A83296 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		4CA9CDE22541F49400A83296 /* DetailViewPovider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewPovider.swift; sourceTree = "<group>"; };
-		4CA9CDEA2544519100A83296 /* View+Embed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Embed.swift"; sourceTree = "<group>"; };
+		4CA9CDEA2544519100A83296 /* View+Convenients.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Convenients.swift"; sourceTree = "<group>"; };
 		4CE3E471258E6914006B1DBA /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -162,7 +162,7 @@
 		4CA9CDA42541E55300A83296 /* WristEmojis WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
-				4CA9CDEA2544519100A83296 /* View+Embed.swift */,
+				4CA9CDEA2544519100A83296 /* View+Convenients.swift */,
 				4C7534042555B5B200F9FF92 /* EmojiPicker */,
 				4C0B95F82547577000815268 /* DataProvider */,
 				4CA9CDDC2541F19D00A83296 /* DetailView */,
@@ -351,7 +351,7 @@
 				4C7534132555B80700F9FF92 /* EmojisModel.swift in Sources */,
 				4CA9CDAA2541E55300A83296 /* ComplicationController.swift in Sources */,
 				4C0B960225475D0600815268 /* DataStore.swift in Sources */,
-				4CA9CDEB2544519100A83296 /* View+Embed.swift in Sources */,
+				4CA9CDEB2544519100A83296 /* View+Convenients.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
