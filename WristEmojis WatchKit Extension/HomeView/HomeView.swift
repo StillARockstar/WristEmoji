@@ -27,7 +27,7 @@ struct HomeView: View {
                                 DetailViewProvider(
                                     dataProvider: provider.dataProvider,
                                     configuration: item,
-                                    deleteable: true
+                                    mode: .view
                                 )
                             ),
                         label: {
@@ -45,7 +45,7 @@ struct HomeView: View {
                         DetailViewProvider(
                             dataProvider: provider.dataProvider,
                             configuration: nil,
-                            deleteable: false
+                            mode: .create
                         )
                     ),
                 label: {

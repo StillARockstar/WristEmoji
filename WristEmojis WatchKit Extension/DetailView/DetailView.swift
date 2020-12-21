@@ -14,6 +14,15 @@ struct DetailView: View {
     @EnvironmentObject var provider: DetailViewProvider
 
     var body: some View {
+        switch provider.mode {
+        case .create:
+            return AnyView(createDetailView)
+        case .view:
+            return AnyView(viewDetailView)
+        }
+    }
+
+    private var createDetailView: some View {
         VStack() {
             Button(action: {
                 showingEmojiPicker = true
@@ -28,33 +37,44 @@ struct DetailView: View {
             })
             .aspectRatio(1.0, contentMode: .fit)
             TextField("Name", text: $provider.name)
-            Spacer()
-            HStack {
-                Button("Save") {
-                    presentationMode.wrappedValue.dismiss()
-                    provider.save()
-                }
-                if provider.deleteable {
-                    Button("Delete") {
-                        showingDeleteAlert = true
-                    }
-                    .foregroundColor(.red)
-                    .alert(isPresented: $showingDeleteAlert, content: {
-                        Alert(
-                            title: Text("Delete this entry?"),
-                            message: nil,
-                            primaryButton: .destructive(
-                                Text("Delete"),
-                                action: {
-                                    presentationMode.wrappedValue.dismiss()
-                                    provider.delete()
-                                }
-                            ),
-                            secondaryButton: .cancel()
-                        )
-                    })
-                }
+            Button("Save") {
+                presentationMode.wrappedValue.dismiss()
+                provider.save()
             }
+        }
+    }
+
+    private var viewDetailView: some View {
+        VStack() {
+            Text(provider.emoji)
+                .font(.largeTitle)
+                .padding(.all, 10)
+            HStack() {
+                Text(provider.name)
+                    .padding(.leading, 10)
+                    .padding([.top, .bottom], 12)
+                Spacer()
+            }
+            .frame(minWidth: 0, maxWidth: .infinity)
+            Button("Delete") {
+                showingDeleteAlert = true
+            }
+            .foregroundColor(.red)
+            .alert(isPresented: $showingDeleteAlert, content: {
+                Alert(
+                    title: Text("Delete this entry?"),
+                    message: nil,
+                    primaryButton: .destructive(
+                        Text("Delete"),
+                        action: {
+                            presentationMode.wrappedValue.dismiss()
+                            provider.delete()
+                        }
+                    ),
+                    secondaryButton: .cancel()
+                )
+            })
+
         }
     }
 }
@@ -66,7 +86,7 @@ struct DetailView_Previews: PreviewProvider {
                 DetailViewProvider(
                     dataProvider: PreviewDataProvider(),
                     configuration: EmojiConfiguration(id: "", emoji: "🚀", name: "Rocket"),
-                    deleteable: true
+                    mode: .create
                 )
             )
         DetailView()
@@ -74,7 +94,7 @@ struct DetailView_Previews: PreviewProvider {
                 DetailViewProvider(
                     dataProvider: PreviewDataProvider(),
                     configuration: EmojiConfiguration(id: "", emoji: "🚀", name: "Rocket"),
-                    deleteable: false
+                    mode: .view
                 )
             )
     }
