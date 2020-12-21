@@ -7,6 +7,7 @@
 
 import Foundation
 import Combine
+import ClockKit
 
 enum DetailViewMode {
     case create
@@ -40,10 +41,19 @@ class DetailViewProvider: ObservableObject {
         self.dataProvider.userData.addOrUpdate(
             configuration: EmojiConfiguration(id: uuid, emoji: emoji, name: name)
         )
+        self.updateClockKit()
     }
 
     func delete() {
         let uuid = self.configuration?.id ?? UUID().uuidString
         self.dataProvider.userData.delete(uuid: uuid)
+        self.updateClockKit()
+    }
+
+    private func updateClockKit() {
+        CLKComplicationServer.sharedInstance().activeComplications?.forEach {
+            CLKComplicationServer.sharedInstance().reloadTimeline(for: $0)
+        }
+        CLKComplicationServer.sharedInstance().reloadComplicationDescriptors()
     }
 }
