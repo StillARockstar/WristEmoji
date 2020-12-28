@@ -14,6 +14,7 @@
 		4C724E12255816E700EE7994 /* emojis_7_1.json in Resources */ = {isa = PBXBuildFile; fileRef = 4C724E11255816E700EE7994 /* emojis_7_1.json */; };
 		4C7534062555B5D700F9FF92 /* EmojiPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7534052555B5D700F9FF92 /* EmojiPicker.swift */; };
 		4C7534132555B80700F9FF92 /* EmojisModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7534122555B80700F9FF92 /* EmojisModel.swift */; };
+		4C9011F8259A27B100B2E759 /* Bundle+Convenients.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9011F7259A27B100B2E759 /* Bundle+Convenients.swift */; };
 		4CA9CD952541E55000A83296 /* WristEmojis WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 4CA9CD942541E55000A83296 /* WristEmojis WatchKit App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		4CA9CD9A2541E55200A83296 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4CA9CD992541E55200A83296 /* Assets.xcassets */; };
 		4CA9CDA12541E55300A83296 /* WristEmojis WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 4CA9CDA02541E55300A83296 /* WristEmojis WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -28,7 +29,6 @@
 		4CA9CDEB2544519100A83296 /* View+Convenients.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA9CDEA2544519100A83296 /* View+Convenients.swift */; };
 		4CE3E472258E6914006B1DBA /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE3E471258E6914006B1DBA /* InfoView.swift */; };
 		4CE3E47D258E76F8006B1DBA /* InfoViewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE3E47C258E76F8006B1DBA /* InfoViewProvider.swift */; };
-		4CE3E482258E7745006B1DBA /* Bundle+Convenients.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE3E481258E7745006B1DBA /* Bundle+Convenients.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +82,7 @@
 		4C724E192558189700EE7994 /* EmojiCurator.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = EmojiCurator.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		4C7534052555B5D700F9FF92 /* EmojiPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiPicker.swift; sourceTree = "<group>"; };
 		4C7534122555B80700F9FF92 /* EmojisModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojisModel.swift; sourceTree = "<group>"; };
+		4C9011F7259A27B100B2E759 /* Bundle+Convenients.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle+Convenients.swift"; sourceTree = "<group>"; };
 		4CA9CD902541E55000A83296 /* WristEmojis.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WristEmojis.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CA9CD942541E55000A83296 /* WristEmojis WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WristEmojis WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CA9CD992541E55200A83296 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -99,7 +100,6 @@
 		4CA9CDEA2544519100A83296 /* View+Convenients.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Convenients.swift"; sourceTree = "<group>"; };
 		4CE3E471258E6914006B1DBA /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
 		4CE3E47C258E76F8006B1DBA /* InfoViewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewProvider.swift; sourceTree = "<group>"; };
-		4CE3E481258E7745006B1DBA /* Bundle+Convenients.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Bundle+Convenients.swift"; path = "../../../../Bundle+Convenients.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,7 +167,7 @@
 			isa = PBXGroup;
 			children = (
 				4CA9CDEA2544519100A83296 /* View+Convenients.swift */,
-				4CE3E481258E7745006B1DBA /* Bundle+Convenients.swift */,
+				4C9011F7259A27B100B2E759 /* Bundle+Convenients.swift */,
 				4C7534042555B5B200F9FF92 /* EmojiPicker */,
 				4C0B95F82547577000815268 /* DataProvider */,
 				4CA9CDDC2541F19D00A83296 /* DetailView */,
@@ -349,9 +349,9 @@
 				4CE3E47D258E76F8006B1DBA /* InfoViewProvider.swift in Sources */,
 				4CA9CDE32541F49400A83296 /* DetailViewPovider.swift in Sources */,
 				4C7534062555B5D700F9FF92 /* EmojiPicker.swift in Sources */,
+				4C9011F8259A27B100B2E759 /* Bundle+Convenients.swift in Sources */,
 				4C0B95FA2547577E00815268 /* DataProvider.swift in Sources */,
 				4CA9CDA82541E55300A83296 /* WristEmojisApp.swift in Sources */,
-				4CE3E482258E7745006B1DBA /* Bundle+Convenients.swift in Sources */,
 				4CE3E472258E6914006B1DBA /* InfoView.swift in Sources */,
 				4CA9CDA62541E55300A83296 /* HomeView.swift in Sources */,
 				4CA9CDDE2541F1B700A83296 /* DetailView.swift in Sources */,
