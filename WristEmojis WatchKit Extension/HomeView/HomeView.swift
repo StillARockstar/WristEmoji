@@ -8,6 +8,7 @@
 import SwiftUI
 
 enum HomeViewSheetItemType: Identifiable {
+    case onboarding
     case info
 
     var id: Int { hashValue }
@@ -63,8 +64,15 @@ struct HomeView: View {
         .onLongPressGesture {
             sheetItem = .info
         }
+        .onAppear(perform: {
+            sheetItem = .onboarding
+        })
         .sheet(item: $sheetItem, content: { item -> AnyView in
             switch item {
+            case .onboarding:
+                return OnboardingView()
+                    .environmentObject(OnboardingViewProvider())
+                    .asAnyView()
             case .info:
                 return InfoView()
                     .environmentObject(InfoViewProvider(dataProvider: provider.dataProvider))

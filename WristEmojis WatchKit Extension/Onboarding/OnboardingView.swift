@@ -33,7 +33,7 @@ private struct OnboardingPageView: View {
         VStack(spacing: 5) {
             Text(provider.headline)
                 .font(.headline)
-                .foregroundColor(.appTint)
+                .foregroundColor(.accentColor)
                 .multilineTextAlignment(.center)
                 .frame(maxWidth: .infinity, alignment: .center)
             Text(provider.description)
@@ -52,7 +52,7 @@ private struct OnboardingDoneView: View {
         VStack {
             Text("... and thats it!")
                 .font(.headline)
-                .foregroundColor(.appTint)
+                .foregroundColor(.accentColor)
                 .multilineTextAlignment(.center)
                 .frame(maxWidth: .infinity, alignment: .center)
                 .padding(.bottom, 5)
