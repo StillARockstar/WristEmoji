@@ -65,7 +65,9 @@ struct HomeView: View {
             sheetItem = .info
         }
         .onAppear(perform: {
-            sheetItem = .onboarding
+            if provider.shouldShowOnboardingAndSetFlag() {
+                sheetItem = .onboarding
+            }
         })
         .sheet(item: $sheetItem, content: { item -> AnyView in
             switch item {

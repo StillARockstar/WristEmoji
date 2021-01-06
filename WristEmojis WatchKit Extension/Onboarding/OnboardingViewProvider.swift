@@ -22,6 +22,18 @@ class OnboardingViewProvider: ObservableObject {
             OnboardingPageProvider(
                 headline: "Welcome to WristEmojis",
                 description: "Express Yourself with emojis."
+            ),
+            OnboardingPageProvider(
+                headline: "Add new emoji",
+                description: "Press on \"New Emoji\" to add one to your collection."
+            ),
+            OnboardingPageProvider(
+                headline: "Set the emoji",
+                description: "Pick an emoji from the collection and set a name."
+            ),
+            OnboardingPageProvider(
+                headline: "Set the complication",
+                description: "Go back to your watch face and long press to edit. From there you set your emoji as a complication."
             )
         ]
     }
