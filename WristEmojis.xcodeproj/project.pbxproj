@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		4C0B95FA2547577E00815268 /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0B95F92547577E00815268 /* DataProvider.swift */; };
 		4C0B960225475D0600815268 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0B960125475D0600815268 /* DataStore.swift */; };
+		4C294A9725A6413B00B0996F /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C294A9625A6413B00B0996F /* OnboardingView.swift */; };
+		4C294A9C25A6415D00B0996F /* OnboardingViewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C294A9B25A6415D00B0996F /* OnboardingViewProvider.swift */; };
 		4C3C9F0B2556E4CA0008F7E8 /* emojis_7_0.json in Resources */ = {isa = PBXBuildFile; fileRef = 4C3C9F0A2556E4CA0008F7E8 /* emojis_7_0.json */; };
 		4C6638B5257FD3E70028B398 /* EmojiConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6638B4257FD3E70028B398 /* EmojiConfiguration.swift */; };
 		4C724E12255816E700EE7994 /* emojis_7_1.json in Resources */ = {isa = PBXBuildFile; fileRef = 4C724E11255816E700EE7994 /* emojis_7_1.json */; };
@@ -76,6 +78,8 @@
 /* Begin PBXFileReference section */
 		4C0B95F92547577E00815268 /* DataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
 		4C0B960125475D0600815268 /* DataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
+		4C294A9625A6413B00B0996F /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		4C294A9B25A6415D00B0996F /* OnboardingViewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewProvider.swift; sourceTree = "<group>"; };
 		4C3C9F0A2556E4CA0008F7E8 /* emojis_7_0.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = emojis_7_0.json; sourceTree = "<group>"; };
 		4C6638B4257FD3E70028B398 /* EmojiConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiConfiguration.swift; sourceTree = "<group>"; };
 		4C724E11255816E700EE7994 /* emojis_7_1.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = emojis_7_1.json; sourceTree = "<group>"; };
@@ -123,6 +127,15 @@
 			path = DataProvider;
 			sourceTree = "<group>";
 		};
+		4C294A9525A6412900B0996F /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				4C294A9B25A6415D00B0996F /* OnboardingViewProvider.swift */,
+				4C294A9625A6413B00B0996F /* OnboardingView.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
 		4C7534042555B5B200F9FF92 /* EmojiPicker */ = {
 			isa = PBXGroup;
 			children = (
@@ -168,6 +181,7 @@
 			children = (
 				4CA9CDEA2544519100A83296 /* View+Convenients.swift */,
 				4C9011F7259A27B100B2E759 /* Bundle+Convenients.swift */,
+				4C294A9525A6412900B0996F /* Onboarding */,
 				4C7534042555B5B200F9FF92 /* EmojiPicker */,
 				4C0B95F82547577000815268 /* DataProvider */,
 				4CA9CDDC2541F19D00A83296 /* DetailView */,
@@ -347,6 +361,7 @@
 			files = (
 				4CA9CDCF2541EB0500A83296 /* HomeViewProvider.swift in Sources */,
 				4CE3E47D258E76F8006B1DBA /* InfoViewProvider.swift in Sources */,
+				4C294A9C25A6415D00B0996F /* OnboardingViewProvider.swift in Sources */,
 				4CA9CDE32541F49400A83296 /* DetailViewPovider.swift in Sources */,
 				4C7534062555B5D700F9FF92 /* EmojiPicker.swift in Sources */,
 				4C9011F8259A27B100B2E759 /* Bundle+Convenients.swift in Sources */,
@@ -358,6 +373,7 @@
 				4C6638B5257FD3E70028B398 /* EmojiConfiguration.swift in Sources */,
 				4C7534132555B80700F9FF92 /* EmojisModel.swift in Sources */,
 				4CA9CDAA2541E55300A83296 /* ComplicationController.swift in Sources */,
+				4C294A9725A6413B00B0996F /* OnboardingView.swift in Sources */,
 				4C0B960225475D0600815268 /* DataStore.swift in Sources */,
 				4CA9CDEB2544519100A83296 /* View+Convenients.swift in Sources */,
 			);

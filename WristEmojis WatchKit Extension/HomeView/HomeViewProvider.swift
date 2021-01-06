@@ -21,4 +21,12 @@ class HomeViewProvider: ObservableObject {
             .assign(to: \.entries, on: self)
             .store(in: &subscriptions)
     }
+
+    func shouldShowOnboardingAndSetFlag() -> Bool {
+        if !dataProvider.appData.onboardingDone {
+            dataProvider.appData.setOnboardingDone(true)
+            return true
+        }
+        return false
+    }
 }
