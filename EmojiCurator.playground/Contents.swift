@@ -11,9 +11,13 @@ enum CuratorError: Error {
 
 struct EmojiCategory: Encodable {
     let name: String
-    let emojis: [String]
+    let emojis: [EmojiData]
 }
 
+struct EmojiData: Encodable {
+    let emoji: String
+    let flavors: [String]?
+}
 
 
 let filePath = Bundle.main.path(forResource:"emojis_14_2", ofType: "txt")
