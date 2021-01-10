@@ -43,10 +43,17 @@ for (index, singleContent) in splitContent.enumerated() {
     if singleContent.starts(with: "-") {
         let categoryName = singleContent.replacingOccurrences(of: "-", with: "")
         let categoryEmojis = Array(splitContent[index + 1]).map({ String($0) })
+        var emojiDatas = [EmojiData]()
+
+        for categoryEmoji in categoryEmojis {
+            emojiDatas.append(
+                EmojiData(emoji: categoryEmoji, flavors: categoryEmoji.allSkinToneModifiedEmojis)
+            )
+        }
 
         let category = EmojiCategory(
             name: categoryName,
-            emojis: categoryEmojis
+            emojis: emojiDatas
         )
         print("Built category: \(category.name) with emojis \(category.emojis.count)")
         categories.append(category)
