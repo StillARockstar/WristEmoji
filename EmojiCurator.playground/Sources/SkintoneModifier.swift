@@ -19,7 +19,6 @@ public extension String {
             return []
         }
         if let hardcodedSkinToneEmojis = Self.hardcodedSkinToneEmojis[self] {
-            print("failed applying on \(self) ==> Using hardcoded emojis")
             return hardcodedSkinToneEmojis
         }
 
