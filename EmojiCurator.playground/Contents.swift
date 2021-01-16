@@ -20,7 +20,9 @@ struct EmojiData: Encodable {
 }
 
 
-let filePath = Bundle.main.path(forResource:"emojis_14_2", ofType: "txt")
+
+let emojiVersion = "14_2"
+let filePath = Bundle.main.path(forResource:"emojis_\(emojiVersion)", ofType: "txt")
 let contentData = FileManager.default.contents(atPath: filePath!)
 let content = String(data:contentData!, encoding:String.Encoding.utf8)
 
@@ -68,4 +70,15 @@ let encoder = JSONEncoder()
 guard let outputData = try? encoder.encode(categories) else {
     throw CuratorError.encodingFailed
 }
-print(String(data: outputData, encoding: .utf8) ?? "No output")
+
+
+
+let outputFileURL = playgroundSharedDataDirectory
+    .appendingPathComponent("emojis_\(emojiVersion).json", isDirectory: false)
+try? FileManager.default.createDirectory(
+    at: playgroundSharedDataDirectory,
+    withIntermediateDirectories: true,
+    attributes: [:]
+)
+try? outputData.write(to: outputFileURL)
+print("Saved to file: \(outputFileURL.absoluteString)")
