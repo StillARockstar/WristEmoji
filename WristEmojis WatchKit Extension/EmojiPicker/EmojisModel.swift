@@ -31,10 +31,10 @@ class EmojisModel {
         let systemVersion = WKInterfaceDevice.current().systemVersion
         var emojiFileName = ""
 
-        if systemVersion.starts(with: "7.1") {
-            emojiFileName = "emojis_7_1"
-        } else {
+        if systemVersion.starts(with: "7.0") {
             emojiFileName = "emojis_7_0"
+        } else {
+            emojiFileName = "emojis_7_1"
         }
 
         guard let filePath = Bundle.main.path(forResource: emojiFileName, ofType: "json"),
