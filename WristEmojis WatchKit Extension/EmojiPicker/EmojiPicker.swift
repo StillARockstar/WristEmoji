@@ -21,7 +21,7 @@ struct EmojiPicker: View {
                 let groupName = EmojisModel.availableGroups[index]
                 NavigationLink(
                     destination: EmojiPickerGrid(
-                        availableEmojis: EmojisModel.emojisForGroup(groupName: groupName),
+                        availableEmojis: EmojisModel.emojisForGroup(groupName: groupName).map({ $0.emoji }),
                         selectedEmojiCallback: { emoji in
                             selectedEmojiCallback(emoji)
                             presentationMode.wrappedValue.dismiss()

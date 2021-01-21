@@ -8,12 +8,12 @@
 import Foundation
 import WatchKit
 
-private struct EmojiRepresentation: Codable {
+struct EmojiRepresentation: Codable {
     let emoji: String
     let flavors: [String]
 }
 
-private struct EmojiCategory: Codable {
+struct EmojiCategory: Codable {
     let name: String
     let emojis: [EmojiRepresentation]
 }
@@ -23,8 +23,8 @@ class EmojisModel {
         return Self.emojiCategories.map({ $0.name })
     }
 
-    static func emojisForGroup(groupName: String) -> [String] {
-        return Self.emojiCategories.first(where: { $0.name == groupName })?.emojis.map({ $0.emoji }) ?? []
+    static func emojisForGroup(groupName: String) -> [EmojiRepresentation] {
+        return Self.emojiCategories.first(where: { $0.name == groupName })?.emojis ?? []
     }
 
     private static let emojiCategories: [EmojiCategory] = {
