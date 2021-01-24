@@ -29,7 +29,7 @@ class OnboardingViewProvider: ObservableObject {
             ),
             OnboardingPageProvider(
                 headline: "Set the emoji",
-                description: "Pick an emoji from the collection and set a name."
+                description: "Select an emoji from the picker and set a name."
             ),
             OnboardingPageProvider(
                 headline: "Set the complication",
