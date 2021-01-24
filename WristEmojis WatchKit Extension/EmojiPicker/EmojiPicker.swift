@@ -7,7 +7,14 @@
 
 import SwiftUI
 
+private struct EmojiPickerGridItem: Hashable {
+    let label: String
+    let doesNavigate: Bool
+}
+
 struct EmojiPicker: View {
+    @State var showsFlavorSelection: Bool = false
+    @State var selectedEmojiRepresentation: EmojiRepresentation?
     @Environment(\.presentationMode) var presentationMode
     let selectedEmojiCallback: ((String) -> Void)
 
@@ -19,12 +26,27 @@ struct EmojiPicker: View {
         NavigationView {
             List(EmojisModel.availableGroups.indices, id: \.self) { index in
                 let groupName = EmojisModel.availableGroups[index]
+                let representations = EmojisModel.emojisForGroup(groupName: groupName)
                 NavigationLink(
                     destination: EmojiPickerGrid(
-                        availableEmojis: EmojisModel.emojisForGroup(groupName: groupName).map({ $0.emoji }),
-                        selectedEmojiCallback: { emoji in
-                            selectedEmojiCallback(emoji)
+                        availableEmojiGridItems: representations.map({ EmojiPickerGridItem(label: $0.emoji, doesNavigate: !$0.flavors.isEmpty) }),
+                        selectedEmojiCallback: { index in
+                            let representation = representations[index]
+                            selectedEmojiCallback(representation.emoji)
                             presentationMode.wrappedValue.dismiss()
+                        },
+                        navigationDestination: { index in
+                            let representation = representations[index]
+                            guard !representation.flavors.isEmpty else { return nil }
+
+                            return EmojiPickerGrid(
+                                availableEmojiGridItems: representation.flavors.map({ EmojiPickerGridItem(label: $0, doesNavigate: false)}),
+                                selectedEmojiCallback: { index in
+                                    selectedEmojiCallback(representation.flavors[index])
+                                    presentationMode.wrappedValue.dismiss()
+                                },
+                                navigationDestination: nil
+                            ).asAnyView()
                         }
                     )
                 ) {
@@ -36,12 +58,14 @@ struct EmojiPicker: View {
 }
 
 private struct EmojiPickerGrid: View {
-    let availableEmojis: [String]
-    let selectedEmojiCallback: ((String) -> Void)
+    let availableEmojiGridItems: [EmojiPickerGridItem]
+    let selectedEmojiCallback: ((Int) -> Void)
+    let navigationDestination: ((Int) -> AnyView?)
 
-    init(availableEmojis: [String], selectedEmojiCallback: @escaping ((String) -> Void)) {
-        self.availableEmojis = availableEmojis
+    init(availableEmojiGridItems: [EmojiPickerGridItem], selectedEmojiCallback: @escaping ((Int) -> Void), navigationDestination: ((Int) -> AnyView?)?) {
+        self.availableEmojiGridItems = availableEmojiGridItems
         self.selectedEmojiCallback = selectedEmojiCallback
+        self.navigationDestination = navigationDestination ?? { _ in Text("Something went wrong").asAnyView() }
     }
 
     let columns = [
@@ -53,12 +77,19 @@ private struct EmojiPickerGrid: View {
     var body: some View {
         ScrollView {
             LazyVGrid(columns: columns) {
-                ForEach(availableEmojis, id: \.self) { item in
-                    Button(item, action: {
-                        selectedEmojiCallback(item)
-                    })
-                    .font(.title)
-                    .aspectRatio(contentMode: .fill)
+                ForEach(availableEmojiGridItems, id: \.self) { item in
+                    let index = availableEmojiGridItems.firstIndex(of: item) ?? 0
+                    if item.doesNavigate {
+                        NavigationLink(item.label, destination: navigationDestination(index))
+                            .font(.title)
+                            .aspectRatio(contentMode: .fill)
+                    } else {
+                        Button(item.label, action: {
+                            selectedEmojiCallback(index)
+                        })
+                        .font(.title)
+                        .aspectRatio(contentMode: .fill)
+                    }
                 }
             }
         }
