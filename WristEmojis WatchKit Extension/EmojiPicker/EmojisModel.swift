@@ -8,9 +8,14 @@
 import Foundation
 import WatchKit
 
-private struct EmojiCategory: Codable {
+struct EmojiRepresentation: Codable {
+    let emoji: String
+    let flavors: [String]
+}
+
+struct EmojiCategory: Codable {
     let name: String
-    let emojis: [String]
+    let emojis: [EmojiRepresentation]
 }
 
 class EmojisModel {
@@ -18,7 +23,7 @@ class EmojisModel {
         return Self.emojiCategories.map({ $0.name })
     }
 
-    static func emojisForGroup(groupName: String) -> [String] {
+    static func emojisForGroup(groupName: String) -> [EmojiRepresentation] {
         return Self.emojiCategories.first(where: { $0.name == groupName })?.emojis ?? []
     }
 
@@ -26,10 +31,10 @@ class EmojisModel {
         let systemVersion = WKInterfaceDevice.current().systemVersion
         var emojiFileName = ""
 
-        if systemVersion.starts(with: "7.1") {
-            emojiFileName = "emojis_7_1"
-        } else {
+        if systemVersion.starts(with: "7.0") {
             emojiFileName = "emojis_7_0"
+        } else {
+            emojiFileName = "emojis_7_1"
         }
 
         guard let filePath = Bundle.main.path(forResource: emojiFileName, ofType: "json"),
