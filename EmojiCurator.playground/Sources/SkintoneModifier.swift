@@ -3,6 +3,7 @@ import UIKit
 
 public extension String {
     private static let emojiSkinToneModifiers: [String] =  ["🏻", "🏼", "🏽", "🏾", "🏿"]
+    private static let hardcodedNoSkinToneEmojis: [String] = ["🤝", "🤼‍♀️", "🤼", "🤼‍♂️"]
     private static let hardcodedSkinToneEmojis: [String: [String]] = [
         "🕵️‍♀️": ["🕵️‍♀️", "🕵🏻‍♀️", "🕵🏼‍♀️", "🕵🏽‍♀️", "🕵🏾‍♀️", "🕵🏿‍♀️"],
         "🕵️‍♂️": ["🕵️‍♂️", "🕵🏻‍♂️", "🕵🏼‍♂️", "🕵🏽‍♂️", "🕵🏾‍♂️", "🕵🏿‍♂️"],
@@ -37,6 +38,9 @@ public extension String {
 
     private var canHaveSkinToneModifier: Bool {
         guard !isEmpty else {
+            return false
+        }
+        if Self.hardcodedNoSkinToneEmojis.contains(self) {
             return false
         }
 
