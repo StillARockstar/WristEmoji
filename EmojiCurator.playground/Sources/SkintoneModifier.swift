@@ -14,6 +14,20 @@ public extension String {
         "🏌️‍♀️": ["🏌️‍♀️", "🏌🏻‍♀️", "🏌🏼‍♀️", "🏌🏽‍♀️", "🏌🏾‍♀️", "🏌🏿‍♀️"],
         "🏌️‍♂️": ["🏌️‍♂️", "🏌🏻‍♂️", "🏌🏼‍♂️", "🏌🏽‍♂️", "🏌🏾‍♂️", "🏌🏿‍♂️"]
     ]
+    private static let coupleHandlingEmojis: [String] = ["👫", "👭", "👬", "👩‍❤️‍👨", "👩‍❤️‍👩", "💑", "👨‍❤️‍👨", "👩‍❤️‍💋‍👨", "👩‍❤️‍💋‍👩", "💏", "👨‍❤️‍💋‍👨"]
+    private static let coupleHandlingPrototypes: [String: String] = [
+        "👫": "👩🏻‍🤝‍👨🏿",
+        "👭": "👩🏻‍🤝‍👩🏿",
+        "👬": "👨🏻‍🤝‍👨🏿",
+        "👩‍❤️‍👨": "👩🏻‍❤️‍👨🏿",
+        "👩‍❤️‍👩": "👩🏻‍❤️‍👩🏿",
+        "💑": "🧑🏻‍❤️‍🧑🏿",
+        "👨‍❤️‍👨": "👨🏻‍❤️‍👨🏿",
+        "👩‍❤️‍💋‍👨": "👩🏻‍❤️‍💋‍👨🏿",
+        "👩‍❤️‍💋‍👩": "👩🏻‍❤️‍💋‍👩🏿",
+        "💏": "🧑🏻‍❤️‍💋‍🧑🏿",
+        "👨‍❤️‍💋‍👨": "👨🏻‍❤️‍💋‍👨🏿"
+    ]
 
     var allSkinToneModifiedEmojis: [String] {
         guard self.canHaveSkinToneModifier else {
@@ -21,6 +35,10 @@ public extension String {
         }
         if let hardcodedSkinToneEmojis = Self.hardcodedSkinToneEmojis[self] {
             return hardcodedSkinToneEmojis
+        }
+        if Self.coupleHandlingEmojis.contains(self) {
+            print("Handling: \(self)")
+            return self.handleCouple(prototype: Self.coupleHandlingPrototypes[self]!)
         }
 
         var emojis = [String]()
@@ -65,6 +83,48 @@ public extension String {
 
         return String(Character(result))
     }
+
+    func handleCouple(prototype: String) -> [String] {
+//        let prototype = "👨🏻‍❤️‍💋‍👨🏿"
+        let prototypeScalars = prototype.unicodeScalars
+
+        guard let firstSkinIdx = prototypeScalars.firstIndex(
+            where: { String($0) == Self.emojiSkinToneModifiers.first! }
+        ) else {
+            return []
+        }
+        let firstSkinIndex = prototypeScalars.distance(
+            from: prototypeScalars.startIndex,
+            to: firstSkinIdx
+        ) as Int
+
+        guard let secondSkinIdx = prototype.unicodeScalars.firstIndex(
+                where: { String($0) == Self.emojiSkinToneModifiers.last! }
+        ) else {
+            return []
+        }
+        let secondSkinIndex = prototypeScalars.distance(
+            from: prototypeScalars.startIndex,
+            to: secondSkinIdx
+        ) as Int
+
+        var results = [String]()
+        for modifier0 in Self.emojiSkinToneModifiers {
+            var newScalars = prototype.unicodeScalars.map({ String($0) })
+            newScalars[firstSkinIndex] = modifier0
+            for modifier1 in Self.emojiSkinToneModifiers {
+                newScalars[secondSkinIndex] = modifier1
+                let newChar = String(Character(newScalars.joined()))
+                results.append(newChar)
+            }
+        }
+
+        guard results.count == Self.emojiSkinToneModifiers.count * Self.emojiSkinToneModifiers.count else {
+            print("failed applying couple logic on \(self) ==> Unhandled emoji variation")
+            return []
+        }
+        return results
+    }
 }
 
 private extension String {
@@ -80,6 +140,4 @@ private extension String {
             .size
     }
 }
-
-
 
