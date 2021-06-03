@@ -37,8 +37,10 @@ public extension String {
             return hardcodedSkinToneEmojis
         }
         if Self.coupleHandlingEmojis.contains(self) {
-            print("Handling: \(self)")
-            return self.handleCouple(prototype: Self.coupleHandlingPrototypes[self]!)
+            return self.handleCouple(
+                original: self,
+                prototype: Self.coupleHandlingPrototypes[self]!
+            )
         }
 
         var emojis = [String]()
@@ -84,8 +86,7 @@ public extension String {
         return String(Character(result))
     }
 
-    func handleCouple(prototype: String) -> [String] {
-//        let prototype = "👨🏻‍❤️‍💋‍👨🏿"
+    func handleCouple(original: String, prototype: String) -> [String] {
         let prototypeScalars = prototype.unicodeScalars
 
         guard let firstSkinIdx = prototypeScalars.firstIndex(
@@ -109,6 +110,7 @@ public extension String {
         ) as Int
 
         var results = [String]()
+        results.append(original)
         for modifier0 in Self.emojiSkinToneModifiers {
             var newScalars = prototype.unicodeScalars.map({ String($0) })
             newScalars[firstSkinIndex] = modifier0
@@ -119,7 +121,7 @@ public extension String {
             }
         }
 
-        guard results.count == Self.emojiSkinToneModifiers.count * Self.emojiSkinToneModifiers.count else {
+        guard results.count == Self.emojiSkinToneModifiers.count * Self.emojiSkinToneModifiers.count + 1 else {
             print("failed applying couple logic on \(self) ==> Unhandled emoji variation")
             return []
         }
