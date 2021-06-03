@@ -37,7 +37,6 @@ public extension String {
             return hardcodedSkinToneEmojis
         }
         if Self.coupleHandlingEmojis.contains(self) {
-            print("Handling: \(self)")
             return self.handleCouple(prototype: Self.coupleHandlingPrototypes[self]!)
         }
 
@@ -85,7 +84,6 @@ public extension String {
     }
 
     func handleCouple(prototype: String) -> [String] {
-//        let prototype = "👨🏻‍❤️‍💋‍👨🏿"
         let prototypeScalars = prototype.unicodeScalars
 
         guard let firstSkinIdx = prototypeScalars.firstIndex(
