@@ -65,6 +65,18 @@ struct HomeView: View {
                     .padding(.leading, 4)
                 }
             )
+            NavigationLink(
+                destination:
+                    DonationsView(),
+                label: {
+                    HStack(spacing: 10) {
+                        Text("🪙")
+                        Text("Donate")
+                        Spacer()
+                    }
+                    .padding(.leading, 4)
+                }
+            )
         }
         .onLongPressGesture {
             sheetItem = .info
