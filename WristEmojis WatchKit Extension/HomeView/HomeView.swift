@@ -57,7 +57,12 @@ struct HomeView: View {
                         )
                     ),
                 label: {
-                    Text("New Emoji")
+                    HStack(spacing: 10) {
+                        Text("🆕")
+                        Text("New Emoji")
+                        Spacer()
+                    }
+                    .padding(.leading, 4)
                 }
             )
         }
