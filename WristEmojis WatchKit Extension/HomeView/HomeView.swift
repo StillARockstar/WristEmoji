@@ -67,11 +67,11 @@ struct HomeView: View {
             )
             NavigationLink(
                 destination:
-                    DonationsView(),
+                    TipsView(),
                 label: {
                     HStack(spacing: 10) {
                         Text("🪙")
-                        Text("Donate")
+                        Text("Tip")
                         Spacer()
                     }
                     .padding(.leading, 4)

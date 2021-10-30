@@ -13,7 +13,7 @@
 		4C294A9C25A6415D00B0996F /* OnboardingViewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C294A9B25A6415D00B0996F /* OnboardingViewProvider.swift */; };
 		4C3C9F0B2556E4CA0008F7E8 /* emojis_7_0.json in Resources */ = {isa = PBXBuildFile; fileRef = 4C3C9F0A2556E4CA0008F7E8 /* emojis_7_0.json */; };
 		4C47127C2668D272001B10BD /* emojis_7_4.json in Resources */ = {isa = PBXBuildFile; fileRef = 4C47127B2668D272001B10BD /* emojis_7_4.json */; };
-		4C4AE5562726F63500272A2E /* DonationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4AE5552726F63500272A2E /* DonationsView.swift */; };
+		4C4AE5562726F63500272A2E /* TipsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4AE5552726F63500272A2E /* TipsView.swift */; };
 		4C6638B5257FD3E70028B398 /* EmojiConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6638B4257FD3E70028B398 /* EmojiConfiguration.swift */; };
 		4C724E12255816E700EE7994 /* emojis_7_1.json in Resources */ = {isa = PBXBuildFile; fileRef = 4C724E11255816E700EE7994 /* emojis_7_1.json */; };
 		4C7534062555B5D700F9FF92 /* EmojiPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7534052555B5D700F9FF92 /* EmojiPicker.swift */; };
@@ -88,7 +88,7 @@
 		4C294A9B25A6415D00B0996F /* OnboardingViewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewProvider.swift; sourceTree = "<group>"; };
 		4C3C9F0A2556E4CA0008F7E8 /* emojis_7_0.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = emojis_7_0.json; sourceTree = "<group>"; };
 		4C47127B2668D272001B10BD /* emojis_7_4.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = emojis_7_4.json; sourceTree = "<group>"; };
-		4C4AE5552726F63500272A2E /* DonationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationsView.swift; sourceTree = "<group>"; };
+		4C4AE5552726F63500272A2E /* TipsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipsView.swift; sourceTree = "<group>"; };
 		4C6638B4257FD3E70028B398 /* EmojiConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiConfiguration.swift; sourceTree = "<group>"; };
 		4C724E11255816E700EE7994 /* emojis_7_1.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = emojis_7_1.json; sourceTree = "<group>"; };
 		4C724E192558189700EE7994 /* EmojiCurator.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = EmojiCurator.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -147,12 +147,12 @@
 			path = Onboarding;
 			sourceTree = "<group>";
 		};
-		4C4AE5542726F61700272A2E /* Donations */ = {
+		4C4AE5542726F61700272A2E /* Tips */ = {
 			isa = PBXGroup;
 			children = (
-				4C4AE5552726F63500272A2E /* DonationsView.swift */,
+				4C4AE5552726F63500272A2E /* TipsView.swift */,
 			);
-			path = Donations;
+			path = Tips;
 			sourceTree = "<group>";
 		};
 		4C7534042555B5B200F9FF92 /* EmojiPicker */ = {
@@ -207,7 +207,7 @@
 				4C0B95F82547577000815268 /* DataProvider */,
 				4CA9CDDC2541F19D00A83296 /* DetailView */,
 				4CA9CDCD2541EAF300A83296 /* HomeView */,
-				4C4AE5542726F61700272A2E /* Donations */,
+				4C4AE5542726F61700272A2E /* Tips */,
 				4CE3E470258E68FE006B1DBA /* Info */,
 				4CA9CDA72541E55300A83296 /* WristEmojisApp.swift */,
 				4CA9CDA92541E55300A83296 /* ComplicationController.swift */,
@@ -387,7 +387,7 @@
 			files = (
 				4CA9CDCF2541EB0500A83296 /* HomeViewProvider.swift in Sources */,
 				4CE3E47D258E76F8006B1DBA /* InfoViewProvider.swift in Sources */,
-				4C4AE5562726F63500272A2E /* DonationsView.swift in Sources */,
+				4C4AE5562726F63500272A2E /* TipsView.swift in Sources */,
 				4C294A9C25A6415D00B0996F /* OnboardingViewProvider.swift in Sources */,
 				4CA9CDE32541F49400A83296 /* DetailViewPovider.swift in Sources */,
 				4C7534062555B5D700F9FF92 /* EmojiPicker.swift in Sources */,
