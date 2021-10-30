@@ -23,9 +23,12 @@ struct WristEmojisApp: App {
 
 class ExtensionDelegate: NSObject, WKExtensionDelegate {
     let dataProvider: DataProvider
+    let iapManager: IAPManager
 
     override init() {
         self.dataProvider = AppDataProvider()
+        self.iapManager = IAPManager()
+        self.iapManager.generateProducts(with: ProductIds.allCases.map({ $0.rawValue }))
     }
 
     func applicationDidBecomeActive() {

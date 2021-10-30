@@ -19,6 +19,10 @@
 		4C7534062555B5D700F9FF92 /* EmojiPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7534052555B5D700F9FF92 /* EmojiPicker.swift */; };
 		4C7534132555B80700F9FF92 /* EmojisModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7534122555B80700F9FF92 /* EmojisModel.swift */; };
 		4C9011F8259A27B100B2E759 /* Bundle+Convenients.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9011F7259A27B100B2E759 /* Bundle+Convenients.swift */; };
+		4C9FCDB3272DBB6900F9E7AD /* InAppPurchase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9FCDB2272DBB6900F9E7AD /* InAppPurchase.swift */; };
+		4C9FCDB5272DC08900F9E7AD /* Configuration.storekit in Resources */ = {isa = PBXBuildFile; fileRef = 4C9FCDB4272DC08900F9E7AD /* Configuration.storekit */; };
+		4C9FCDB6272DC08900F9E7AD /* Configuration.storekit in Resources */ = {isa = PBXBuildFile; fileRef = 4C9FCDB4272DC08900F9E7AD /* Configuration.storekit */; };
+		4C9FCDB7272DC08900F9E7AD /* Configuration.storekit in Resources */ = {isa = PBXBuildFile; fileRef = 4C9FCDB4272DC08900F9E7AD /* Configuration.storekit */; };
 		4CA9CD952541E55000A83296 /* WristEmojis WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 4CA9CD942541E55000A83296 /* WristEmojis WatchKit App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		4CA9CD9A2541E55200A83296 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4CA9CD992541E55200A83296 /* Assets.xcassets */; };
 		4CA9CDA12541E55300A83296 /* WristEmojis WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 4CA9CDA02541E55300A83296 /* WristEmojis WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -91,6 +95,8 @@
 		4C7534052555B5D700F9FF92 /* EmojiPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiPicker.swift; sourceTree = "<group>"; };
 		4C7534122555B80700F9FF92 /* EmojisModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojisModel.swift; sourceTree = "<group>"; };
 		4C9011F7259A27B100B2E759 /* Bundle+Convenients.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle+Convenients.swift"; sourceTree = "<group>"; };
+		4C9FCDB2272DBB6900F9E7AD /* InAppPurchase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InAppPurchase.swift; sourceTree = "<group>"; };
+		4C9FCDB4272DC08900F9E7AD /* Configuration.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = Configuration.storekit; sourceTree = "<group>"; };
 		4CA9CD902541E55000A83296 /* WristEmojis.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WristEmojis.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CA9CD942541E55000A83296 /* WristEmojis WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WristEmojis WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CA9CD992541E55200A83296 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -127,6 +133,7 @@
 				4C0B95F92547577E00815268 /* DataProvider.swift */,
 				4C0B960125475D0600815268 /* DataStore.swift */,
 				4C6638B4257FD3E70028B398 /* EmojiConfiguration.swift */,
+				4C9FCDB2272DBB6900F9E7AD /* InAppPurchase.swift */,
 			);
 			path = DataProvider;
 			sourceTree = "<group>";
@@ -163,6 +170,7 @@
 		4CA9CD892541E54F00A83296 = {
 			isa = PBXGroup;
 			children = (
+				4C9FCDB4272DC08900F9E7AD /* Configuration.storekit */,
 				4C724E192558189700EE7994 /* EmojiCurator.playground */,
 				4CA9CD982541E55000A83296 /* WristEmojis WatchKit App */,
 				4CA9CDA42541E55300A83296 /* WristEmojis WatchKit Extension */,
@@ -344,6 +352,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C9FCDB5272DC08900F9E7AD /* Configuration.storekit in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -352,6 +361,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4CA9CD9A2541E55200A83296 /* Assets.xcassets in Resources */,
+				4C9FCDB6272DC08900F9E7AD /* Configuration.storekit in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -360,6 +370,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C3C9F0B2556E4CA0008F7E8 /* emojis_7_0.json in Resources */,
+				4C9FCDB7272DC08900F9E7AD /* Configuration.storekit in Resources */,
 				4C47127C2668D272001B10BD /* emojis_7_4.json in Resources */,
 				4C724E12255816E700EE7994 /* emojis_7_1.json in Resources */,
 				4CA9CDAF2541E55400A83296 /* Preview Assets.xcassets in Resources */,
@@ -380,6 +391,7 @@
 				4C294A9C25A6415D00B0996F /* OnboardingViewProvider.swift in Sources */,
 				4CA9CDE32541F49400A83296 /* DetailViewPovider.swift in Sources */,
 				4C7534062555B5D700F9FF92 /* EmojiPicker.swift in Sources */,
+				4C9FCDB3272DBB6900F9E7AD /* InAppPurchase.swift in Sources */,
 				4C9011F8259A27B100B2E759 /* Bundle+Convenients.swift in Sources */,
 				4C0B95FA2547577E00815268 /* DataProvider.swift in Sources */,
 				4CA9CDA82541E55300A83296 /* WristEmojisApp.swift in Sources */,

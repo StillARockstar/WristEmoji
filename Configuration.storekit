@@ -1,0 +1,78 @@
+{
+  "identifier" : "09B7F4B4",
+  "nonRenewingSubscriptions" : [
+
+  ],
+  "products" : [
+    {
+      "displayPrice" : "0.99",
+      "familyShareable" : false,
+      "internalID" : "FB4AE786",
+      "localizations" : [
+        {
+          "description" : "Give the Developer a little Tip for his work",
+          "displayName" : "Some Tip",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "at.Schoder.WristEmojis.iap.SomeTip",
+      "referenceName" : "WristEmojis Donation Some Tip",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "0.99",
+      "familyShareable" : false,
+      "internalID" : "9B2A2970",
+      "localizations" : [
+        {
+          "description" : "Developers need Coffee to properly work",
+          "displayName" : "Coffee",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "at.Schoder.WristEmojis.iap.Coffee",
+      "referenceName" : "WristEmojis Donation Coffee",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "0.99",
+      "familyShareable" : false,
+      "internalID" : "89B7BB60",
+      "localizations" : [
+        {
+          "description" : "Developers party too. First round on you?",
+          "displayName" : "Fancy Drink",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "at.Schoder.WristEmojis.iap.FancyDrink",
+      "referenceName" : "WristEmojis Donation Fancy Drink",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "0.99",
+      "familyShareable" : false,
+      "internalID" : "33ED92F1",
+      "localizations" : [
+        {
+          "description" : "Everyone loves Taco Tuesday. One on you?",
+          "displayName" : "Taco Dinner",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "at.Schoder.WristEmojis.iap.TacoDinner",
+      "referenceName" : "WristEmojis Donation Taco Dinner",
+      "type" : "Consumable"
+    }
+  ],
+  "settings" : {
+
+  },
+  "subscriptionGroups" : [
+
+  ],
+  "version" : {
+    "major" : 1,
+    "minor" : 1
+  }
+}
