@@ -16,11 +16,11 @@
         }
       ],
       "productID" : "at.Schoder.WristEmojis.iap.SomeTip",
-      "referenceName" : "WristEmojis Donation Some Tip",
+      "referenceName" : "WristEmojis Tip Some Tip",
       "type" : "Consumable"
     },
     {
-      "displayPrice" : "0.99",
+      "displayPrice" : "2.99",
       "familyShareable" : false,
       "internalID" : "9B2A2970",
       "localizations" : [
@@ -31,11 +31,11 @@
         }
       ],
       "productID" : "at.Schoder.WristEmojis.iap.Coffee",
-      "referenceName" : "WristEmojis Donation Coffee",
+      "referenceName" : "WristEmojis Tip Coffee",
       "type" : "Consumable"
     },
     {
-      "displayPrice" : "0.99",
+      "displayPrice" : "9.99",
       "familyShareable" : false,
       "internalID" : "89B7BB60",
       "localizations" : [
@@ -46,11 +46,11 @@
         }
       ],
       "productID" : "at.Schoder.WristEmojis.iap.FancyDrink",
-      "referenceName" : "WristEmojis Donation Fancy Drink",
+      "referenceName" : "WristEmojis Tip Fancy Drink",
       "type" : "Consumable"
     },
     {
-      "displayPrice" : "0.99",
+      "displayPrice" : "19.99",
       "familyShareable" : false,
       "internalID" : "33ED92F1",
       "localizations" : [
@@ -61,7 +61,7 @@
         }
       ],
       "productID" : "at.Schoder.WristEmojis.iap.TacoDinner",
-      "referenceName" : "WristEmojis Donation Taco Dinner",
+      "referenceName" : "WristEmojis Tip Taco Dinner",
       "type" : "Consumable"
     }
   ],

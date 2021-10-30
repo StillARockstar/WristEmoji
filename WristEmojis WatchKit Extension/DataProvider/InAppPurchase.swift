@@ -10,10 +10,10 @@ import Combine
 import StoreKit
 
 enum ProductIds: String, CaseIterable {
-    case donationSomeTip = "at.Schoder.WristEmojis.iap.SomeTip"
-    case donationCoffee = "at.Schoder.WristEmojis.iap.Coffee"
-    case donationFancyDrink = "at.Schoder.WristEmojis.iap.FancyDrink"
-    case donationTacoDinner = "at.Schoder.WristEmojis.iap.TacoDinner"
+    case tipSomeTip = "at.Schoder.WristEmojis.iap.SomeTip"
+    case tipCoffee = "at.Schoder.WristEmojis.iap.Coffee"
+    case tipFancyDrink = "at.Schoder.WristEmojis.iap.FancyDrink"
+    case tipTacoDinner = "at.Schoder.WristEmojis.iap.TacoDinner"
 }
 
 enum RestoreEventState {
