@@ -50,7 +50,7 @@ struct EmojiPicker: View {
                         }
                     )
                 ) {
-                    Text(groupName)
+                    Text(LocalizedStringKey(groupName))
                 }
             }
         }

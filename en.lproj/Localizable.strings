@@ -7,3 +7,12 @@
 "aboutApp.title" = "About WristEmojis";
 "aboutApp.version.title" = "App Version";
 "aboutApp.copyright.title" = "Copyright";
+
+"emoji.category.1" = "Smileys & People";
+"emoji.category.2" = "Animals & Nature";
+"emoji.category.3" = "Food & Drink";
+"emoji.category.4" = "Activity";
+"emoji.category.5" = "Travel & Places";
+"emoji.category.6" = "Objects";
+"emoji.category.7" = "Symbols";
+"emoji.category.8" = "Flags";
