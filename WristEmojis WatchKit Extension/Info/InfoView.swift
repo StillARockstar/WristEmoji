@@ -12,19 +12,19 @@ struct InfoView: View {
 
     var body: some View {
         VStack(alignment: .leading) {
-            Text("About WristEmojis".uppercased())
+            Text("aboutApp.title")
                 .font(.headline)
                 .foregroundColor(.accentColor)
                 .frame(maxWidth: .infinity,alignment: .center)
                 .padding([.top, .bottom], 4)
 
-            Text("App Version")
+            Text("aboutApp.version.title")
             Text(provider.versionNumber)
                 .font(.caption)
                 .foregroundColor(.gray)
                 .padding(.bottom, 4)
 
-            Text("Copyright")
+            Text("aboutApp.copyright.title")
             Text(provider.copyrightText)
                 .font(.caption)
                 .foregroundColor(.gray)
