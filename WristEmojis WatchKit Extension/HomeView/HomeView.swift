@@ -57,7 +57,7 @@ struct HomeView: View {
                         )
                     ),
                 label: {
-                    Text("New Emoji")
+                    Text("home.new")
                 }
             )
         }

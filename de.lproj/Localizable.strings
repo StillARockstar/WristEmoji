@@ -1,0 +1,18 @@
+"home.new" = "Neues Emoji";
+"detail.name" = "Name";
+"detail.save" = "Speichern";
+"detail.delete.button" = "Löschen";
+"detail.delete.title" = "Diesen Eintrag löschen?";
+"detail.delete.confirm" = "Löschen";
+"aboutApp.title" = "Über WristEmojis";
+"aboutApp.version.title" = "App Version";
+"aboutApp.copyright.title" = "Copyright";
+
+"emoji.category.1" = "Smileys & Personen";
+"emoji.category.2" = "Tiere & Natur";
+"emoji.category.3" = "Essen & Getänke";
+"emoji.category.4" = "Aktivitäten";
+"emoji.category.5" = "Reisen & Orte";
+"emoji.category.6" = "Objekte";
+"emoji.category.7" = "Symbole";
+"emoji.category.8" = "Flaggen";
