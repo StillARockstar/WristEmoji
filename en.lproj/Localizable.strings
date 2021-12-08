@@ -1,4 +1,9 @@
 "home.new" = "New Emoji";
+"detail.name" = "Name";
+"detail.save" = "Save";
+"detail.delete.button" = "Delete";
+"detail.delete.title" = "Delete this entry?";
+"detail.delete.confirm" = "Delete";
 "aboutApp.title" = "About WristEmojis";
 "aboutApp.version.title" = "App Version";
 "aboutApp.copyright.title" = "Copyright";

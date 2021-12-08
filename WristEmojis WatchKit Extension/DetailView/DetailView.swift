@@ -36,8 +36,8 @@ struct DetailView: View {
                 }
             })
             .aspectRatio(1.0, contentMode: .fit)
-            TextField("Name", text: $provider.name)
-            Button("Save") {
+            TextField(LocalizedStringKey("detail.name"), text: $provider.name)
+            Button("detail.save") {
                 presentationMode.wrappedValue.dismiss()
                 provider.save()
             }
@@ -56,16 +56,16 @@ struct DetailView: View {
                 Spacer()
             }
             .frame(minWidth: 0, maxWidth: .infinity)
-            Button("Delete") {
+            Button("detail.delete.button") {
                 showingDeleteAlert = true
             }
             .foregroundColor(.red)
             .alert(isPresented: $showingDeleteAlert, content: {
                 Alert(
-                    title: Text("Delete this entry?"),
+                    title: Text("detail.delete.title"),
                     message: nil,
                     primaryButton: .destructive(
-                        Text("Delete"),
+                        Text("detail.delete.confirm"),
                         action: {
                             presentationMode.wrappedValue.dismiss()
                             provider.delete()
