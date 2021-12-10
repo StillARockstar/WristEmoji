@@ -31,12 +31,12 @@ private struct OnboardingPageView: View {
 
     var body: some View {
         VStack(spacing: 5) {
-            Text(provider.headline)
+            Text(LocalizedStringKey(provider.headline))
                 .font(.headline)
                 .foregroundColor(.accentColor)
                 .multilineTextAlignment(.center)
                 .frame(maxWidth: .infinity, alignment: .center)
-            Text(provider.description)
+            Text(LocalizedStringKey(provider.description))
                 .multilineTextAlignment(.center)
                 .frame(maxWidth: .infinity, alignment: .center)
             Spacer()
@@ -50,13 +50,13 @@ private struct OnboardingDoneView: View {
 
     var body: some View {
         VStack {
-            Text("... and thats it!")
+            Text("onboarding.done.title")
                 .font(.headline)
                 .foregroundColor(.accentColor)
                 .multilineTextAlignment(.center)
                 .frame(maxWidth: .infinity, alignment: .center)
                 .padding(.bottom, 5)
-            Button("Done", action: action)
+            Button("onboarding.done.button", action: action)
         }
     }
 }

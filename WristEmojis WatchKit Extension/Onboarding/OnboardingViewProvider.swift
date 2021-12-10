@@ -20,20 +20,20 @@ class OnboardingViewProvider: ObservableObject {
     init() {
         self.pages = [
             OnboardingPageProvider(
-                headline: "Welcome to WristEmojis",
-                description: "Express Yourself with emojis."
+                headline: "onboarding.welcome.title",
+                description: "onboarding.welcome.text"
             ),
             OnboardingPageProvider(
-                headline: "Add new emoji",
-                description: "Press on \"New Emoji\" to add one to your collection."
+                headline: "onboarding.addEmoji.title",
+                description: "onboarding.addEmoji.text"
             ),
             OnboardingPageProvider(
-                headline: "Set the emoji",
-                description: "Select an emoji from the picker and set a name."
+                headline: "onboarding.setEmoji.title",
+                description: "onboarding.setEmoji.text"
             ),
             OnboardingPageProvider(
-                headline: "Set the complication",
-                description: "Go back to your watch face and long press to edit. From there you set your emoji as a complication."
+                headline: "onboarding.complication.title",
+                description: "onboarding.complication.text"
             )
         ]
     }
