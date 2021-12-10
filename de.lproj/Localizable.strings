@@ -4,6 +4,16 @@
 "detail.delete.button" = "Löschen";
 "detail.delete.title" = "Diesen Eintrag löschen?";
 "detail.delete.confirm" = "Löschen";
+"onboarding.welcome.title" = "Willkomen bei WristEmojis";
+"onboarding.welcome.text" = "Drücke dich selbst mit Emojis aus.";
+"onboarding.addEmoji.title" = "Emoji hinzufügen";
+"onboarding.addEmoji.text" = "Tappe auf \"Neues Emoji\" um ein Emoji deiner Sammlung hinzuzufügen.";
+"onboarding.setEmoji.title" = "Wähle ein Emoji";
+"onboarding.setEmoji.text" = "Wähle ein Emoji aus der Bibliothek und gib einen Namen ein.";
+"onboarding.complication.title" = "Ziffernblatt";
+"onboarding.complication.text" = "Gehe zurück zum Ziffernblatt, tappe lang auf den Bildschirm und wähle WristEmojis als Complication.";
+"onboarding.done.title" = "Das wars!";
+"onboarding.done.button" = "Fertig";
 "aboutApp.title" = "Über WristEmojis";
 "aboutApp.version.title" = "App Version";
 "aboutApp.copyright.title" = "Copyright";

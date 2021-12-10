@@ -4,6 +4,16 @@
 "detail.delete.button" = "Delete";
 "detail.delete.title" = "Delete this entry?";
 "detail.delete.confirm" = "Delete";
+"onboarding.welcome.title" = "Welcome to WristEmojis";
+"onboarding.welcome.text" = "Express Yourself with emojis.";
+"onboarding.addEmoji.title" = "Add new emoji";
+"onboarding.addEmoji.text" = "Tap on \"New Emoji\" to add one to your collection.";
+"onboarding.setEmoji.title" = "Pick an emoji";
+"onboarding.setEmoji.text" = "Select an emoji from the picker and set a name.";
+"onboarding.complication.title" = "Watchface";
+"onboarding.complication.text" = "Go back to your watch face and long press to edit. From there you set your emoji as a complication.";
+"onboarding.done.title" = "... and thats it!";
+"onboarding.done.button" = "Done";
 "aboutApp.title" = "About WristEmojis";
 "aboutApp.version.title" = "App Version";
 "aboutApp.copyright.title" = "Copyright";
