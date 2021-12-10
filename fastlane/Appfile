@@ -1,0 +1,3 @@
+app_identifier "at.Schoder.WristEmojis" # The bundle identifier of your app
+apple_id "schoda@me.com" # Your Apple email address
+team_id "GQQ4RZBUL3" # Developer Portal Team ID
