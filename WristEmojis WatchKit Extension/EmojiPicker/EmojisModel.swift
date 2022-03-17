@@ -31,7 +31,9 @@ class EmojisModel {
         let systemVersion = WKInterfaceDevice.current().systemVersion
         var emojiFileName = ""
 
-        if #available(watchOS 7.4, *) {
+        if #available(watchOS 8.5, *) {
+            emojiFileName = "emojis_8_5"
+        } else if #available(watchOS 7.4, *) {
             emojiFileName = "emojis_7_4"
         } else if #available(watchOS 7.1, *) {
             emojiFileName = "emojis_7_1"
