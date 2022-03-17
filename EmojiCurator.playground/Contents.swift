@@ -19,7 +19,7 @@ struct EmojiData: Encodable {
     let flavors: [String]?
 }
 
-let emojiVersion = "14_5"
+let emojiVersion = "15_4"
 let filePath = Bundle.main.path(forResource:"emojis_\(emojiVersion)", ofType: "txt")
 let contentData = FileManager.default.contents(atPath: filePath!)
 let content = String(data:contentData!, encoding:String.Encoding.utf8)
