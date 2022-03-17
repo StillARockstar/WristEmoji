@@ -35,6 +35,7 @@
 		4CE9C0F82760F73900B71FE9 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4CE9C0F62760F73400B71FE9 /* Localizable.strings */; };
 		4CE9C0F92760F73900B71FE9 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4CE9C0F62760F73400B71FE9 /* Localizable.strings */; };
 		4CE9C0FA2760F73A00B71FE9 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4CE9C0F62760F73400B71FE9 /* Localizable.strings */; };
+		E558DC5A27E3B772007C9987 /* emojis_8_5.json in Resources */ = {isa = PBXBuildFile; fileRef = E558DC5927E3B772007C9987 /* emojis_8_5.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,6 +112,7 @@
 		4CE3E47C258E76F8006B1DBA /* InfoViewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewProvider.swift; sourceTree = "<group>"; };
 		4CE9C0F52760F73400B71FE9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		4CE9C0F72760F73600B71FE9 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		E558DC5927E3B772007C9987 /* emojis_8_5.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = emojis_8_5.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +153,7 @@
 				4C3C9F0A2556E4CA0008F7E8 /* emojis_7_0.json */,
 				4C724E11255816E700EE7994 /* emojis_7_1.json */,
 				4C47127B2668D272001B10BD /* emojis_7_4.json */,
+				E558DC5927E3B772007C9987 /* emojis_8_5.json */,
 			);
 			path = EmojiPicker;
 			sourceTree = "<group>";
@@ -359,6 +362,7 @@
 			files = (
 				4C3C9F0B2556E4CA0008F7E8 /* emojis_7_0.json in Resources */,
 				4CE9C0FA2760F73A00B71FE9 /* Localizable.strings in Resources */,
+				E558DC5A27E3B772007C9987 /* emojis_8_5.json in Resources */,
 				4C47127C2668D272001B10BD /* emojis_7_4.json in Resources */,
 				4C724E12255816E700EE7994 /* emojis_7_1.json in Resources */,
 				4CA9CDAF2541E55400A83296 /* Preview Assets.xcassets in Resources */,
